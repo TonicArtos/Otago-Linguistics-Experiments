@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Observer Project 1</string>
+    <string-array name="sentences">
+        <item >The other chair was a swivel chair as might be found in an average business office.</item>
+        <item >He put something on her head that made the chair look like an electric chair.</item>
+        <item >Which is good, of course, providing the flow doesn\'t become a flood, and the flood a mindless deluge.</item>
+        <item >It may be slower than a plane, bus or car, but for long-distance trips it has its good sides - a toilet, a dining car and a sleeping car.</item>
+    </string-array>
+    <string-array name="questions">
+        <item >Is the author of the sentence in a business office?</item>
+        <item >Is the chair being discussed, an electric chair?</item>
+        <item >In the sentence, is it flooding?</item>
+        <item >Is the object being discussed, a plane?</item>
+    </string-array>
+    <string name="char_pattern">\\w</string>
+    <string name="replace_char">-</string>
+    <integer-array name="answers"></integer-array>
+
+</resources>
