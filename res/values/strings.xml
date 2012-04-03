@@ -1,20 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Observer Project 1</string>
+    <string name="app_name">Slef Paced Reading Experiment</string>
     <string-array name="sentences">
-        <item >The other chair was a swivel chair as might be found in an average business office.</item>
-        <item >He put something on her head that made the chair look like an electric chair.</item>
-        <item >Which is good, of course, providing the flow doesn\'t become a flood, and the flood a mindless deluge.</item>
-        <item >It may be slower than a plane, bus or car, but for long-distance trips it has its good sides - a toilet, a dining car and a sleeping car.</item>
+        <item >Sentence 1.</item>
+        <item >Sentence 2.</item>
+        <item >Sentence 3.</item>
+        <item >Sentence 4.</item>
     </string-array>
     <string-array name="questions">
-        <item >Is the author of the sentence in a business office?</item>
-        <item >Is the chair being discussed, an electric chair?</item>
-        <item >In the sentence, is it flooding?</item>
-        <item >Is the object being discussed, a plane?</item>
+        <item >Question 1?</item>
+        <item >Question 2?</item>
+        <item >Question 3?</item>
     </string-array>
-    <string name="char_pattern">\\w</string>
+    <string name="char_pattern">\\S</string>
     <string name="replace_char">-</string>
-    <integer-array name="answers"></integer-array>
+    <integer-array name="answers">
+        <item >0</item>
+        <item >0</item>
+        <item >0</item>
+    </integer-array>
+    <string name="question_is_english_first">Is English your first language?</string>
+    <string name="question_right_handed">Are you right handed?</string>
+    <string name="question_age">Age*</string>
+    <string name="question_gender">Gender*</string>
+    <string name="answer_yes">Yes</string>
+    <string name="answer_no">No</string>
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+    <string name="good_response">That was correct!</string>
+    <string name="poor_response">Oops, sorry!</string>
+    <string name="text_break">Feel free to take a break for a while.</string>
+    <string name="text_thanks">Thank you for completing this experiment.</string>
+    <string name="admin_introduction">Self Paced Reading Experiment</string>
+    <string name="experiment_run_explantion">When an experiment is run the data will not be permanently saved until the entire experiment is complete.</string>
+    <string name="label_run_experiment">Begin Experiment</string>
+    <string name="label_export_data">Export Data</string>
+    <string name="export_data_explanation">When the data is exported it is saved to the device\'s internal disk. To access this data you will need to plug the device into a computer and copy it in the regular manner.</string>
+    <string name="subject_introduction">Welcome to the\nSelf Paced Reading Experiment</string>
+    <string name="request_text">Please fill in the following information.</string>
+    <string name="radio_yes">Yes</string>
+    <string name="radio_no">No</string>
+    <string name="label_continue">Continue</string>
+    <string name="label_skip">Skip</string>
+    <string name="about_required_text">*option fields</string>
+    <string name="text_complain_incomplete_info">Please complete the information.</string>
+    <string-array name="tutorial_part_1">
+        <item >Explanation 1</item>
+        <item >Explanation 2</item>
+        <item >Explanation 3</item>
+    </string-array>
+    <string-array name="tutorial_part_2">
+        <item >Finishing up</item>
+        <item >Ready to go?</item>
+    </string-array>
+    <string name="explain_word_revealing">This is how the word reading component works.</string>
+    <string name="demo_sentence">This is a demonstration of the word reading component.</string>
 
 </resources>
