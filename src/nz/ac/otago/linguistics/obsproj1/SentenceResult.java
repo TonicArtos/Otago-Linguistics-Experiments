@@ -11,7 +11,6 @@ import java.util.Vector;
  * @author Tonic Artos
  */
 public class SentenceResult implements ExperimentActivity.Result {
-	private static final long serialVersionUID = -5618372457459106543L;
 	/**
 	 * @serial
 	 */
@@ -26,15 +25,16 @@ public class SentenceResult implements ExperimentActivity.Result {
 	protected Vector<Click> clicks = new Vector<Click>();
 	
 	@Override
-	public void write(BufferedWriter out) throws IOException {
-		out.write("SentenceID, " + sentenceIndex + "\n");
+	public String toString() {
+		String s = "";
+		s += "SentenceID, " + sentenceIndex + "\n";
 		for (Click click : clicks) {
-			click.writeWord(out);
+			s += click.getWord();
 		}
-		out.write("\n");
 		for (Click click : clicks) {
-			click.writeTime(out);
+			s += click.getTimeString();
 		}
-		out.write("\n");
+		s += "\n";
+		return s;
 	}
 }

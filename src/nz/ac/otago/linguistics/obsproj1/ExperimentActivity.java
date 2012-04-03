@@ -1,10 +1,5 @@
 package nz.ac.otago.linguistics.obsproj1;
 
-import java.io.BufferedWriter;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.Random;
 import java.util.Vector;
 
@@ -15,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 /**
  * Conduct an experiment for a single subject.
@@ -28,9 +22,7 @@ public class ExperimentActivity extends Activity {
 	 * 
 	 * @author Tonic Artos
 	 */
-	public interface Result extends Serializable {
-
-		void write(BufferedWriter out) throws IOException;
+	public interface Result {
 	}
 
 	/**
@@ -163,22 +155,12 @@ public class ExperimentActivity extends Activity {
         DatabaseHelper db = new DatabaseHelper(this);
         ContentValues values = new ContentValues();
 
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = null; 
-        try {
-                oos = new ObjectOutputStream(baos);
-                oos.writeObject(results);
-        } catch (IOException e) {
-                Log.e("SPRE-DataStorage", e.getMessage(), e);
-                Toast.makeText(this, "There was an error storing the data - " + e.getMessage(), Toast.LENGTH_LONG).show();
-        } finally {
-                try {
-                        oos.close();
-                } catch (IOException e) {}
+        String s = "";
+        for (Result r : results) {
+        	s += r.toString();
         }
-        byte[] serialisedResults = baos.toByteArray(); 
         
-        values.put(ExperimentData.KEY_DATA, serialisedResults);
+        values.put(ExperimentData.KEY_DATA, s);
         
         db.getWritableDatabase().insert(ExperimentData.TABLE, null, values);
         db.close();

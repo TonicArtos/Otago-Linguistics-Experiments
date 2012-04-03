@@ -10,6 +10,6 @@ public class ExperimentData extends DbModel {
 
     public static final String TABLE_CREATE = "create table " + TABLE +
                                               " (_id integer primary key autoincrement, " +
-                                              "data blob not null" +
+                                              "data text not null" +
                                               ");";
 }

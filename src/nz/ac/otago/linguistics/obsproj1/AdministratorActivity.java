@@ -56,30 +56,21 @@ public class AdministratorActivity extends Activity {
 	protected void exportData() {
 		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
 		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] {ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA}, null, null, null, null, null);
+		if (!c.moveToFirst()) {
+			//nothing to write out.
+			return;
+		}
 		File path = Environment.getExternalStoragePublicDirectory("SPRE");
 		File file = new File(path, "experimentdata.csv");
 		try {
 			path.mkdirs();
 			BufferedWriter out = new BufferedWriter(new FileWriter(file));
-			c.moveToFirst();
 			do {
 				out.write("Session ID, " + c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID)) + "\n");
-				ByteArrayInputStream bais = new ByteArrayInputStream(c.getBlob(c.getColumnIndex(ExperimentData.KEY_DATA)));
-				ObjectInputStream oin = new ObjectInputStream(bais);
-				Object obj = oin.readObject();
-				if (obj instanceof Vector) {
-					Vector<ExperimentActivity.Result> results = (Vector<ExperimentActivity.Result>) obj;
-					for (ExperimentActivity.Result result : results) {
-						result.write(out);
-					}
-				}
-				
+				out.write(c.getString(c.getColumnIndex(ExperimentData.KEY_DATA)));
 			} while (c.moveToNext());
 		} catch (IOException e) {
 			Log.w("ExternalStorage", "Error writing " + file, e);
-			Toast.makeText(this, "An error was encountered", Toast.LENGTH_LONG).show();
-		} catch (ClassNotFoundException e) {
-			Log.w("ExternalStorage", "Error recalling data " + e.getMessage(), e);
 			Toast.makeText(this, "An error was encountered", Toast.LENGTH_LONG).show();
 		}
 		db.close();

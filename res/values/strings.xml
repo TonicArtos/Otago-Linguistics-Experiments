@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Slef Paced Reading Experiment</string>
+    <string name="app_name">Self Paced Reading Experiment</string>
     <string-array name="sentences">
         <item >Sentence 1.</item>
         <item >Sentence 2.</item>
