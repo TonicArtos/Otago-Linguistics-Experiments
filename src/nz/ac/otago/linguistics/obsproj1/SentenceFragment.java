@@ -4,7 +4,7 @@ package nz.ac.otago.linguistics.obsproj1;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.text.format.Time;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,17 +21,16 @@ public class SentenceFragment extends Fragment {
 	private View.OnClickListener advClickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			Time now = new Time();
-			now.setToNow();
-			
+			long nt = System.currentTimeMillis();			
 			// Store click information.
 			Click click = new Click();
-			click.millis = timestamp - now.toMillis(false);
+			click.millis = nt - timestamp;
 			click.word = sentenceView.getWord();
+			Log.d("aads", click.word);
 			click.wordIndex = sentenceView.getWordIndex();
 			result.clicks.add(click);
 			
-			timestamp = now.toMillis(false);
+			timestamp = nt;
 			
 			if (sentenceView.step()) {
 				main.addResult(result);
@@ -67,6 +66,8 @@ public class SentenceFragment extends Fragment {
 		sentenceView = (HideAndSeekTextView) v.findViewById(R.id.sentence_text);
 		sentenceView.setText(result.sentence);
 		((Button) v.findViewById(R.id.adv_button)).setOnClickListener(advClickListener);
+		
+		timestamp = System.currentTimeMillis();
 		
 		return v;
 	}

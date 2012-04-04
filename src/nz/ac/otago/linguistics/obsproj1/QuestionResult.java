@@ -11,14 +11,14 @@ public class QuestionResult implements ExperimentActivity.Result {
 
 	protected boolean correctAnswer;
 	protected int questionId;
-	protected int responseTime;
+	protected long responseTime;
 	protected int answer;
 	protected String question;
 
 	@Override
 	public String toString() {
 		String s = "";
-		s += "QuestionID, " + questionId + "\n";
+		s += "Question ID, " + questionId + "\n";
 		s += "Response, " + responseTime + ", " + (correctAnswer ? "correct" : "incorrect") + "\n";
 		return s;
 	}

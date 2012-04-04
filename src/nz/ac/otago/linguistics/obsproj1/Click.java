@@ -1,7 +1,5 @@
 package nz.ac.otago.linguistics.obsproj1;
 
-import java.io.Serializable;
-
 /**
  * A specific account of user interaction when reading a word.
  * 

@@ -66,13 +66,16 @@ public class AdministratorActivity extends Activity {
 			path.mkdirs();
 			BufferedWriter out = new BufferedWriter(new FileWriter(file));
 			do {
-				out.write("Session ID, " + c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID)) + "\n");
+				out.write("\nSession ID, " + c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID)) + "\n");
 				out.write(c.getString(c.getColumnIndex(ExperimentData.KEY_DATA)));
 			} while (c.moveToNext());
+			out.flush();
+			out.close();
 		} catch (IOException e) {
 			Log.w("ExternalStorage", "Error writing " + file, e);
 			Toast.makeText(this, "An error was encountered", Toast.LENGTH_LONG).show();
 		}
+		
 		db.close();
 	}
 }

@@ -145,11 +145,6 @@ public class ExperimentActivity extends Activity {
 	 * Save the experiment results into the database.
 	 */
 	private void storeResults() {
-		// FIXME
-	}
-	
-	@Override
-	public void finish() {
 		super.finish();
 
         DatabaseHelper db = new DatabaseHelper(this);

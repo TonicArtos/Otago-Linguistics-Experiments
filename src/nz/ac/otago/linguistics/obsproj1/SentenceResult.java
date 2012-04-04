@@ -1,7 +1,5 @@
 package nz.ac.otago.linguistics.obsproj1;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
 import java.util.Vector;
 
 
@@ -27,10 +25,11 @@ public class SentenceResult implements ExperimentActivity.Result {
 	@Override
 	public String toString() {
 		String s = "";
-		s += "SentenceID, " + sentenceIndex + "\n";
+		s += "Sentence ID, " + sentenceIndex + "\n";
 		for (Click click : clicks) {
 			s += click.getWord();
 		}
+		s += "\n";
 		for (Click click : clicks) {
 			s += click.getTimeString();
 		}

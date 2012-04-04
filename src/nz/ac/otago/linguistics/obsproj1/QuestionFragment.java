@@ -27,6 +27,7 @@ public class QuestionFragment extends Fragment {
 			handleAnswer(QuestionResult.ANSWERED_NO);
 		}
 	};
+	private long timestamp;
 
 	public static QuestionFragment newInstance(ExperimentActivity main, int index) {
 		QuestionFragment f = new QuestionFragment();
@@ -66,6 +67,8 @@ public class QuestionFragment extends Fragment {
 		yesButton.setOnClickListener(yesClickListener);
 		noButton.setOnClickListener(noClickListener);
 
+		timestamp = System.currentTimeMillis();
+		
 		return v;
 	}
 
@@ -80,6 +83,7 @@ public class QuestionFragment extends Fragment {
 		// Finish building response and save it.
 		result.answer = answer;
 		result.correctAnswer = getResources().getIntArray(R.array.answers)[result.questionId] == answer;
+		result.responseTime = System.currentTimeMillis() - timestamp;
 		main.addResult(result);
 		
 		// Show the question response panel.
