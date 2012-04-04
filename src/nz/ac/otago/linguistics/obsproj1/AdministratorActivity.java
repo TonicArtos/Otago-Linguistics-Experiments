@@ -15,6 +15,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -48,6 +49,15 @@ public class AdministratorActivity extends Activity {
 		setContentView(R.layout.main);
 		((Button) findViewById(R.id.button_run_experiment)).setOnClickListener(runExperimentClickListener);
 		((Button) findViewById(R.id.button_export_data)).setOnClickListener(exportDataClickListener);
+		DatabaseHelper db = new DatabaseHelper(this);
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] {ExperimentData.KEY_ROWID}, null, null, null, null, null);
+		if (c.getCount() == 0) {
+			findViewById(R.id.text_num_records).setVisibility(View.INVISIBLE);
+		} else {
+			((TextView) findViewById(R.id.text_num_records)).setText(c.getCount() + " Records");
+		}
+		c.close();
+		db.close();
 	}
 
 	protected void exportData() {
