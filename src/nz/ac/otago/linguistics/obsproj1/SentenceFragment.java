@@ -57,6 +57,8 @@ public class SentenceFragment extends Fragment {
 		result = new SentenceResult();
 		result.sentenceIndex = getArguments().getInt(KEY_INDEX, 0);
 		result.sentence = getResources().getStringArray(R.array.sentences)[result.sentenceIndex];
+		result.condition1 = getResources().getIntArray(R.array.conditions1)[result.sentenceIndex];
+		result.condition2 = getResources().getIntArray(R.array.conditions2)[result.sentenceIndex];
 		
 		View v = inflater.inflate(R.layout.sentence_page, container, false);
 		

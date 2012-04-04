@@ -19,6 +19,7 @@ public class PauseFragment extends Fragment {
 
 	protected ExperimentActivity main;
 	protected int mode;
+	private int blocksToGo;
 
 	private View.OnClickListener advClickListener = new View.OnClickListener() {
 		@Override
@@ -31,9 +32,10 @@ public class PauseFragment extends Fragment {
 		}
 	};
 
-	public static PauseFragment newInstance(ExperimentActivity main, int mode) {
+	public static PauseFragment newInstance(ExperimentActivity main, int mode, int blocksToGo) {
 		PauseFragment f = new PauseFragment();
 		f.main = main;
+		f.blocksToGo = blocksToGo;
 		f.mode = mode;
 		return f;
 	}
@@ -42,7 +44,7 @@ public class PauseFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.text_page, container, false);
 		if (mode == MODE_BREAK) {
-			((TextView) v.findViewById(R.id.text)).setText(R.string.text_break);
+			((TextView) v.findViewById(R.id.text)).setText(R.string.text_break_prefix + blocksToGo + R.string.text_break_suffix);
 		} else {
 			((TextView) v.findViewById(R.id.text)).setText(R.string.text_thanks);
 		}
