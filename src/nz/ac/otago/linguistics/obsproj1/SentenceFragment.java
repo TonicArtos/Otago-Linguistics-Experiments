@@ -4,7 +4,6 @@ package nz.ac.otago.linguistics.obsproj1;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,6 @@ public class SentenceFragment extends Fragment {
 			Click click = new Click();
 			click.millis = nt - timestamp;
 			click.word = sentenceView.getWord();
-			Log.d("aads", click.word);
 			click.wordIndex = sentenceView.getWordIndex();
 			result.clicks.add(click);
 			

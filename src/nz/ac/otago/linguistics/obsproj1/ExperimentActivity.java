@@ -6,9 +6,9 @@ import java.util.Vector;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 /**
@@ -42,6 +42,8 @@ public class ExperimentActivity extends Activity {
 	private int sentencesSinceBreak;
 	private int totalNumSentences;
 
+	protected long sessionId;
+
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -68,6 +70,17 @@ public class ExperimentActivity extends Activity {
 		totalNumSentences = getResources().getStringArray(R.array.sentences).length;
 		usedSentences = new boolean[totalNumSentences]; // All elements
 														// initialise to false
+		
+		// Work out this session ID;
+		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] {ExperimentData.KEY_ROWID}, null, null, null, null, null);
+		if (!c.moveToLast()) {
+			sessionId = 1;
+		} else {
+			sessionId = c.getLong(c.getColumnIndex(ExperimentData.KEY_ROWID));
+		}
+		c.close();
+		db.close();
 
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 		ft.replace(android.R.id.content, ProfileFragment.newInstance(this));
@@ -119,17 +132,12 @@ public class ExperimentActivity extends Activity {
 
 		// Select a valid random sentence index.
 		int selected = rand.nextInt(totalNumSentences - numUsedSentences);
-		Log.d("totalNumSentences", String.valueOf(totalNumSentences));
-		Log.d("numUsedSentences", String.valueOf(numUsedSentences));
-		Log.d("selected", String.valueOf(selected));
 		// Jump past used sentences.
 		for (int i = 0; i <= selected; i++) {
-			Log.d("used", String.valueOf(usedSentences[i]));
 			if (usedSentences[i]) {
 				selected += 1;
 			}
 		}
-		Log.d("final selected", String.valueOf(selected));
 
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 		ft.replace(android.R.id.content, SentenceFragment.newInstance(this, selected));

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProfileFragment extends Fragment {
@@ -41,6 +42,7 @@ public class ProfileFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.landing_page, container, false);
 		//TODO: Reserve an ID.
+		((TextView) v.findViewById(R.id.text_subject_id)).setText("ID: " + String.format("%04d", main.sessionId));
 		((Button) v.findViewById(R.id.button_continue)).setOnClickListener(onContinueClickListener);
 		return v;
 	}

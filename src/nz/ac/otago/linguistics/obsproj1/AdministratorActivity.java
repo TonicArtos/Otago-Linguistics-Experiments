@@ -1,14 +1,9 @@
 package nz.ac.otago.linguistics.obsproj1;
 
 import java.io.BufferedWriter;
-import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.OutputStream;
-import java.util.Vector;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -75,7 +70,7 @@ public class AdministratorActivity extends Activity {
 			Log.w("ExternalStorage", "Error writing " + file, e);
 			Toast.makeText(this, "An error was encountered", Toast.LENGTH_LONG).show();
 		}
-		
+		c.close();
 		db.close();
 	}
 }
