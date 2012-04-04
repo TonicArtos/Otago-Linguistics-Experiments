@@ -19,7 +19,7 @@ public class QuestionResult implements ExperimentActivity.Result {
 	public String toString() {
 		String s = "";
 		s += "Question ID, " + questionId + "\n";
-		s += "Response, " + responseTime + ", " + (correctAnswer ? "correct" : "incorrect") + "\n";
+		s += "Response, " + responseTime + ", " + (correctAnswer ? "correct" : "incorrect") + ", " + (answer == ANSWERED_YES ? "yes" : "no") + "\n";
 		return s;
 	}
 }

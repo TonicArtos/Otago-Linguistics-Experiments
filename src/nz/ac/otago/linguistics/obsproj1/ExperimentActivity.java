@@ -114,7 +114,7 @@ public class ExperimentActivity extends Activity {
 		if (numUsedSentences - totalNumSentences == 0) {
 			storeResults();
 			FragmentTransaction ft = getFragmentManager().beginTransaction();
-			ft.replace(android.R.id.content, PauseFragment.newInstance(this, PauseFragment.MODE_EXIT));
+			ft.replace(android.R.id.content, PauseFragment.newInstance(this, PauseFragment.MODE_EXIT, 0));
 			ft.setTransition(FragmentTransaction.TRANSIT_NONE);
 			ft.commit();
 			return;
@@ -123,10 +123,15 @@ public class ExperimentActivity extends Activity {
 		// Give the user a break every 12 sentences.
 		if (sentencesSinceBreak >= 12) {
 			sentencesSinceBreak = 0;
+			// Work out number of blocks remaining.
+			int numBlocksRemaining = (totalNumSentences - numUsedSentences) / 12;
+			
+			// Create break page.
 			FragmentTransaction ft = getFragmentManager().beginTransaction();
-			ft.replace(android.R.id.content, PauseFragment.newInstance(this, PauseFragment.MODE_BREAK));
+			ft.replace(android.R.id.content, PauseFragment.newInstance(this, PauseFragment.MODE_BREAK, numBlocksRemaining));
 			ft.setTransition(FragmentTransaction.TRANSIT_NONE);
 			ft.commit();
+			
 			return;
 		}
 
@@ -153,8 +158,6 @@ public class ExperimentActivity extends Activity {
 	 * Save the experiment results into the database.
 	 */
 	private void storeResults() {
-		super.finish();
-
         DatabaseHelper db = new DatabaseHelper(this);
         ContentValues values = new ContentValues();
 
