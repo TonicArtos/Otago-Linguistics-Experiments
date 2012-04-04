@@ -8,11 +8,14 @@ import java.io.IOException;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -46,6 +49,15 @@ public class AdministratorActivity extends Activity {
 		setContentView(R.layout.main);
 		((Button) findViewById(R.id.button_run_experiment)).setOnClickListener(runExperimentClickListener);
 		((Button) findViewById(R.id.button_export_data)).setOnClickListener(exportDataClickListener);
+		DatabaseHelper db = new DatabaseHelper(this);
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] {ExperimentData.KEY_ROWID}, null, null, null, null, null);
+		if (c.getCount() == 0) {
+			findViewById(R.id.text_num_records).setVisibility(View.INVISIBLE);
+		} else {
+			((TextView) findViewById(R.id.text_num_records)).setText(c.getCount() + " Records");
+		}
+		c.close();
+		db.close();
 	}
 
 	protected void exportData() {
@@ -57,6 +69,8 @@ public class AdministratorActivity extends Activity {
 		}
 		File path = Environment.getExternalStoragePublicDirectory("SPRE");
 		File file = new File(path, "experimentdata.csv");
+//		file.setReadable(true, false);
+		
 		try {
 			path.mkdirs();
 			BufferedWriter out = new BufferedWriter(new FileWriter(file));
@@ -70,7 +84,20 @@ public class AdministratorActivity extends Activity {
 			Log.w("ExternalStorage", "Error writing " + file, e);
 			Toast.makeText(this, "An error was encountered", Toast.LENGTH_LONG).show();
 		}
+		MediaScannerConnection.scanFile(getApplicationContext(), new String[] {file.getAbsolutePath()}, null, new MediaScannerConnection.OnScanCompletedListener() {
+			@Override
+			public void onScanCompleted(final String path, final Uri uri) {
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						Toast.makeText(getApplicationContext(), path + " " + uri, Toast.LENGTH_LONG).show();
+					}
+				});
+			}
+		});
+//		Toast.makeText(this, "Data exported to " + Environment.DIRECTORY_DOWNLOADS + " folder.", Toast.LENGTH_LONG).show();
 		c.close();
 		db.close();
+		
 	}
 }

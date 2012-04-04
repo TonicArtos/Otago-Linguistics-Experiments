@@ -29,7 +29,7 @@
     <string name="radio_female">Female</string>
     <string name="good_response">That was correct!</string>
     <string name="poor_response">Oops, sorry!</string>
-    <string name="text_break">Feel free to take a break for a while.</string>
+    <string name="text_break_prefix">End of block. </string>
     <string name="text_thanks">Thank you for completing this experiment.</string>
     <string name="admin_introduction">Self Paced Reading Experiment</string>
     <string name="experiment_run_explantion">When an experiment is run the data will not be permanently saved until the entire experiment is complete.</string>
@@ -55,5 +55,18 @@
     </string-array>
     <string name="explain_word_revealing">This is how the word reading component works.</string>
     <string name="demo_sentence">This is a demonstration of the word reading component.</string>
+    <string name="text_break_suffix"> blocks left. Continue when ready.</string>
+    <integer-array name="conditions1">
+        <item >1</item>
+        <item >2</item>
+        <item >3</item>
+        <item >0</item>
+    </integer-array>
+    <integer-array name="conditions2">
+        <item >2</item>
+        <item >5</item>
+        <item >1</item>
+        <item >0</item>
+    </integer-array>
 
 </resources>
