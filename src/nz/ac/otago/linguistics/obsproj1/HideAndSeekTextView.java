@@ -6,7 +6,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import android.widget.TextView.BufferType;
 
 /**
  * A TextView that hides/obfuscates the text by some method. Each word can be
@@ -54,7 +53,8 @@ public class HideAndSeekTextView extends TextView {
 	 * Step through each word of the sentence. Loops to the beginning if all
 	 * words has been stepped through.
 	 * 
-	 * @return true if stepping has finished entire sequence of words. Otherwise, false.
+	 * @return true if stepping has finished entire sequence of words.
+	 *         Otherwise, false.
 	 */
 	public boolean step() {
 		boolean isFinished = false;
@@ -63,7 +63,7 @@ public class HideAndSeekTextView extends TextView {
 			currword = -1;
 			isFinished = true;
 		}
-		//update representation
+		// update representation
 		super.setText(getMangledSentence(), buffType);
 		return isFinished;
 	}
@@ -90,5 +90,16 @@ public class HideAndSeekTextView extends TextView {
 			}
 		}
 		return sentence;
+	}
+
+	public String getWord() {
+		if (currword >= 0) {
+			return words.get(currword);
+		}
+		return "";
+	}
+
+	public int getWordIndex() {
+		return currword;
 	}
 }
