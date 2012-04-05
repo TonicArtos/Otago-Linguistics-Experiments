@@ -14,6 +14,7 @@
         <item>A question about the second sentence?</item>
         <item>The final and third question?</item>
     </string-array>
+
     <integer-array name="answers">
         <item>0</item>
         <item>1</item>
@@ -42,27 +43,39 @@
         <item>The following items are for practice.</item>
     </string-array>
     <string-array name="practice_sentences">
-        <item>This is a sentence.</item>
-        <item>This is sentence two.</item>
-        <item>The third sentence is more of the same.</item>
-        <item>Sentence number four.</item>
+        <item>The husband of the beautiful woman bought her roses and candy for her birthday.</item>
+        <item>The reporter had dinner yesterday with the baseball player who Kevin admired.</item>
+        <item>The mother of the prisoner sent him packages that contained cookies and novels.</item>
+        <item>Maya played with the blocks and the balls, but she soon got bored with them.</item>
+        <item>The therapist set up a meeting with the upset woman and her husband yesterday.</item>
+        <item>The patient who the doctor treated became better after only a few treatments.</item>
+        <item>The visitors at the zoo watched the zookeeper who the monkeys and apes teased.</item>
+        <item>The semester will start next week, but the students and teachers are not ready.</item>
     </string-array>
     <string-array name="practice_questions">
-        <item>A question about sentence one?</item>
-        <item>A question about the second sentence?</item>
-        <item>The final and third question?</item>
+        <item>Did the woman buy roses?</item>
+        <item>Did the reporter have dinner with Kevin?</item>
+        <item>Did the mother send packages to the prisoner?</item>
+        <item>Did Maya play with the blocks?</item>
     </string-array>
+
+    <integer-array name="practice_answers">
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+    </integer-array>
+
     <string-array name="tutorial_part_2">
         <item>End of practice. If you have any questions, please ask the researcher at this point. When ready, press the button to begin.</item>
     </string-array>
-    
+
     <string name="text_break_suffix"> blocks left. Continue when ready.</string>
     <string name="good_response">That was correct!</string>
     <string name="poor_response">Oops, sorry!</string>
     <string name="text_break_prefix">End of block. </string>
     <string name="text_thanks">That\'s the end, thank you.</string>
-
-        <string name="subject_introduction">Welcome to the\nSelf Paced Reading Experiment</string>
+    <string name="subject_introduction">Welcome to the\nSelf Paced Reading Experiment</string>
     <string name="request_text">Please fill in the following information.</string>
     <string name="question_is_english_first">Is English your first language?</string>
     <string name="question_right_handed">Are you right handed?</string>
@@ -76,7 +89,6 @@
     <string name="radio_yes">Yes</string>
     <string name="radio_no">No</string>
     <string name="text_complain_incomplete_info">Please complete the information.</string>
-    
     <string name="admin_introduction">Self Paced Reading Experiment</string>
     <string name="experiment_run_explantion">When an experiment is run the data will not be permanently saved until the entire experiment is complete.</string>
     <string name="label_run_experiment">Begin Experiment</string>
