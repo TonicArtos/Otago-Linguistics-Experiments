@@ -1,4 +1,4 @@
-package nz.ac.otago.linguistics.obsproj1;
+package nz.ac.otago.linguistics.spre;
 
 import java.util.Random;
 import java.util.Vector;

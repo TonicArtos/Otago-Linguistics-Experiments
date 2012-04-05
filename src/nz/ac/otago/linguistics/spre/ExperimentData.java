@@ -1,4 +1,4 @@
-package nz.ac.otago.linguistics.obsproj1;
+package nz.ac.otago.linguistics.spre;
 
 public class ExperimentData extends DbModel {
     @SuppressWarnings("unused")

@@ -1,4 +1,4 @@
-package nz.ac.otago.linguistics.obsproj1;
+package nz.ac.otago.linguistics.spre;
 
 public class ProfileResult implements ExperimentActivity.Result {
 	protected boolean englishFirst;

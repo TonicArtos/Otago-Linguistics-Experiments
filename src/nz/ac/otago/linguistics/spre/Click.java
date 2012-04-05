@@ -1,4 +1,4 @@
-package nz.ac.otago.linguistics.obsproj1;
+package nz.ac.otago.linguistics.spre;
 
 /**
  * A specific account of user interaction when reading a word.

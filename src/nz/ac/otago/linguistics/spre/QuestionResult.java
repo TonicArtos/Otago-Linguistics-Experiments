@@ -1,4 +1,4 @@
-package nz.ac.otago.linguistics.obsproj1;
+package nz.ac.otago.linguistics.spre;
 
 /**
  * A result for an answered question.
