@@ -2,7 +2,6 @@ package nz.ac.otago.linguistics.obsproj1;
 
 import java.util.Vector;
 
-
 /**
  * A result type which stores user interaction while reading sentences.
  * 
@@ -14,39 +13,17 @@ public class SentenceResult implements ExperimentActivity.Result {
 	public int condition1;
 	public int condition2;
 	protected Vector<Click> clicks = new Vector<Click>();
-	
+	private String[] condition1Text = new String[] { "Filler", "Relative Clause", "Adverb", "Coordination" };
+	private String[] condition2Text = new String[] { "Filler", "High", "Low" };
+
 	@Override
 	public String toString() {
 		String s = "";
 		s += "Sentence ID, " + (sentenceIndex + 1) + "\n";
-		String conditionText;
-		switch (condition1) {
-		case 1:
-			conditionText = "Relative Clause";
-			break;
-		case 2:
-			conditionText = "Adverb";
-			break;
-		case 3:
-			conditionText = "Coordination";
-			break;
-		default:
-			conditionText = "Filler";
-			break;
-		}
-		s += "Condition1," + conditionText + "\n";
-		switch (condition2) {
-		case 1:
-			conditionText = "High";
-			break;
-		case 2:
-			conditionText = "Low";
-			break;
-		default:
-			conditionText = "Filler";
-			break;
-		}
-		s += "Condition2," + conditionText + "\n";
+		;
+		// Normalise index and fetch matching strings
+		s += "Condition1," + condition1Text[(condition1 < 0 || condition1Text.length <= condition1) ? 0 : condition1] + "\n";
+		s += "Condition2," + condition2Text[(condition2 < 0 || condition2Text.length <= condition2) ? 0 : condition2] + "\n";
 		for (Click click : clicks) {
 			s += click.getWord();
 		}
