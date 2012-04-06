@@ -95,12 +95,12 @@ public class AdministratorActivity extends Activity  {
 				runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						Toast.makeText(getApplicationContext(), path + " " + uri, Toast.LENGTH_LONG).show();
+//						Toast.makeText(getApplicationContext(), path + " " + uri, Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), "Data exported to SPRE/experimentdata.csv", Toast.LENGTH_LONG).show();
 					}
 				});
 			}
 		});
-//		Toast.makeText(this, "Data exported to " + Environment.DIRECTORY_DOWNLOADS + " folder.", Toast.LENGTH_LONG).show();
 		c.close();
 		db.close();
 		
