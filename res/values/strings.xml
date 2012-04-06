@@ -52,6 +52,16 @@
         <item>1</item>
         <item>1</item>
     </integer-array>
+    <integer-array name="practice_indices">
+        <item>0</item>
+        <item>4</item>
+        <item>6</item>
+        <item>2</item>
+        <item>3</item>
+        <item>1</item>
+        <item>5</item>
+        <item>7</item>
+    </integer-array>
 
     <string-array name="tutorial_part_2">
         <item>End of practice. If you have any questions, please ask the researcher at this point. When ready, press the button to begin.</item>

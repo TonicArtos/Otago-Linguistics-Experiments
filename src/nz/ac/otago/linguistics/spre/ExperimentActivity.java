@@ -181,7 +181,14 @@ public class ExperimentActivity extends Activity {
 	public void showNextPracticeSentence() {
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 		if (practice_count < getResources().getStringArray(R.array.practice_sentences).length) {
-			ft.replace(android.R.id.content, SentenceFragment.newInstance(this, practice_count, MODE_PRACTICE));
+			// Find next sentence in practice sentence order.
+			int[] ps = getResources().getIntArray(R.array.practice_indices);
+			for (int i = 0; i < ps.length; i++) {
+				if (ps[i] == practice_count) {
+					ft.replace(android.R.id.content, SentenceFragment.newInstance(this, i, MODE_PRACTICE));
+					break;
+				}
+			}
 			practice_count += 1;
 		} else {
 			ft.replace(android.R.id.content, TutorialFragment.newInstance(this, TutorialFragment.MODE_PART_2));
