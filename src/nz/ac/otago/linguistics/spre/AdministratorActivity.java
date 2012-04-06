@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnFocusChangeListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,7 +25,7 @@ import android.widget.Toast;
  * 
  * @author Tonic Artos
  */
-public class AdministratorActivity extends Activity {
+public class AdministratorActivity extends Activity  {
 	private View.OnClickListener runExperimentClickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
@@ -49,6 +50,10 @@ public class AdministratorActivity extends Activity {
 		setContentView(R.layout.main);
 		((Button) findViewById(R.id.button_run_experiment)).setOnClickListener(runExperimentClickListener);
 		((Button) findViewById(R.id.button_export_data)).setOnClickListener(exportDataClickListener);
+		updateRecordCountDisplay();
+	}
+
+	private void updateRecordCountDisplay() {
 		DatabaseHelper db = new DatabaseHelper(this);
 		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] {ExperimentData.KEY_ROWID}, null, null, null, null, null);
 		if (c.getCount() == 0) {
@@ -99,5 +104,11 @@ public class AdministratorActivity extends Activity {
 		c.close();
 		db.close();
 		
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		updateRecordCountDisplay();
 	}
 }
