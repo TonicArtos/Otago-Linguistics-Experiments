@@ -97,4 +97,7 @@
     <string name="dialog_set_number">Set</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_picker_title">Choose a number</string>
+    <string name="clear_data_explanation">To clear the experiment data set press and hold the button, then click yes in the dialog. Clearing the data is permanent so be careful.</string>
+    <string name="label_clear_data">Clear Data</string>
+    <string name="text_clear_data">Clear all collected data?</string>
 </resources>

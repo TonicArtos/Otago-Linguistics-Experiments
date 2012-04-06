@@ -32,4 +32,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             currVersion++;
         }
     }
+
+	public int clearData() {
+		return getWritableDatabase().delete(ExperimentData.TABLE, null, null);
+	}
 }
