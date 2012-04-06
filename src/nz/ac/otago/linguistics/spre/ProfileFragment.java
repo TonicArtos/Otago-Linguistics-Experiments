@@ -41,7 +41,7 @@ public class ProfileFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.landing_page, container, false);
-		//TODO: Reserve an ID.
+		// Assume this session ID will be saved as last ID + 1.
 		((TextView) v.findViewById(R.id.text_subject_id)).setText("ID: " + String.format("%04d", main.sessionId));
 		((Button) v.findViewById(R.id.button_continue)).setOnClickListener(onContinueClickListener);
 		return v;
