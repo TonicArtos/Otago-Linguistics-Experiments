@@ -73,6 +73,7 @@ type Item struct {
 	Answer     string
 	Condition1 string
 	Condition2 string
+	Index      int
 }
 
 // Structure of the different xml components to output
@@ -104,6 +105,12 @@ type Condition2Data struct {
 	XMLName     xml.Name `xml:"integer-array"`
 	Name        string   `xml:"name,attr"`
 	Condition2s []int    `xml:"item"`
+}
+
+type IndexData struct {
+	XMLName xml.Name `xml:"integer-array"`
+	Name    string   `xml:"name,attr"`
+	Indices []int    `xml:"item"`
 }
 
 // Conditions
@@ -141,7 +148,10 @@ func main() {
 	readXmlFromFile(filename, &spreData)
 
 	// Strip excess white space caused by xml formatting.
+	// and save in indices to preserve across sorting.
+	indices := []int{}
 	for i := range spreData.Items {
+		spreData.Items[i].Index = i
 		spreData.Items[i].Sentence = strings.Join(strings.Fields(spreData.Items[i].Sentence), " ")
 		spreData.Items[i].Question = strings.Join(strings.Fields(spreData.Items[i].Question), " ")
 		spreData.Items[i].Answer = strings.Join(strings.Fields(spreData.Items[i].Answer), " ")
@@ -159,6 +169,7 @@ func main() {
 	condition1s := []int{}
 	condition2s := []int{}
 	for i := range spreData.Items {
+		indices = append(indices, spreData.Items[i].Index)
 		sentences = append(sentences, spreData.Items[i].Sentence)
 		if spreData.Items[i].Question != "" {
 			questions = append(questions, spreData.Items[i].Question)
@@ -175,7 +186,7 @@ func main() {
 			condition2s = append(condition2s, c2s["Filler"])
 		}
 	}
-	
+
 	file, err := os.Create(*out)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "Error", err)
@@ -191,6 +202,7 @@ func main() {
 	file.Write([]byte("\n"))
 	if err := encoder.Encode(Condition2Data{Condition2s: condition2s, Name: addPrefix(*prefix, "conditions2")}); err != nil {
 		fmt.Fprintln(os.Stderr, "Error", err)
+	}
 	file.Write([]byte("\n"))
 	if err := encoder.Encode(QuestionData{Questions: questions, Name: addPrefix(*prefix, "questions")}); err != nil {
 		fmt.Fprintln(os.Stderr, "Error", err)
@@ -199,6 +211,9 @@ func main() {
 	if err := encoder.Encode(AnswerData{Answers: answers, Name: addPrefix(*prefix, "answers")}); err != nil {
 		fmt.Fprintln(os.Stderr, "Error", err)
 	}
+	file.Write([]byte("\n"))
+	if err := encoder.Encode(IndexData{Indices: indices, Name: addPrefix(*prefix, "indices")}); err != nil {
+		fmt.Fprintln(os.Stderr, "Error", err)
 	}
 	file.Write([]byte("\n"))
 	file.Close()
