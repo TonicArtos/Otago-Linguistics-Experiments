@@ -12,11 +12,12 @@ public class QuestionResponseFragment extends Fragment {
 	private static final String KEY_CORRECT_ANSWER = "correctAnswer";
 
 	protected ExperimentActivity main;
+	private int mode;
 
-	public static QuestionResponseFragment newInstance(ExperimentActivity main, boolean correctAnswer) {
+	public static QuestionResponseFragment newInstance(ExperimentActivity main, boolean correctAnswer, int mode) {
 		QuestionResponseFragment f = new QuestionResponseFragment();
 		f.main = main;
-
+		f.mode = mode;
 		// Set index as an argument
 		Bundle args = new Bundle();
 		args.putBoolean(KEY_CORRECT_ANSWER, correctAnswer);
@@ -28,7 +29,11 @@ public class QuestionResponseFragment extends Fragment {
 	private View.OnClickListener advListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			main.showNextSentence();
+			if (mode == ExperimentActivity.MODE_PRACTICE) {
+				main.showNextPracticeSentence();
+			} else {
+				main.showNextSentence();
+			}
 		}
 	};
 	

@@ -22,7 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp" />
 
-        <nz.ac.otago.linguistics.obsproj1.HideAndSeekTextView
+        <nz.ac.otago.linguistics.spre.HideAndSeekTextView
             android:id="@+id/sentence_text"
             style="@android:style/TextAppearance.Large"
             android:layout_width="match_parent"

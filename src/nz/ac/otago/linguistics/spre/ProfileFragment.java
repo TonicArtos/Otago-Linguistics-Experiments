@@ -19,7 +19,7 @@ public class ProfileFragment extends Fragment {
 		public void onClick(View v) {
 			if (inputComplete()) {
 				// Show the tutorial panel.
-				TutorialFragment response = TutorialFragment.newInstance(main);
+				TutorialFragment response = TutorialFragment.newInstance(main, TutorialFragment.MODE_PART_1);
 				FragmentTransaction ft = getFragmentManager().beginTransaction();
 				ft.replace(android.R.id.content, response);
 				ft.setTransition(FragmentTransaction.TRANSIT_NONE);

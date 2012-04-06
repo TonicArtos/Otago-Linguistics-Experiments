@@ -17,6 +17,9 @@ import android.view.View;
  * @author Tonic Artos
  */
 public class ExperimentActivity extends Activity {
+	public static final int MODE_NORMAL = 0;
+	public static final int MODE_PRACTICE = 1;
+	
 	/**
 	 * A result that can save its data to a given database.
 	 * 
@@ -24,6 +27,7 @@ public class ExperimentActivity extends Activity {
 	 */
 	public interface Result {
 	}
+
 
 	/**
 	 * Indices match up with sentences. A true value means the matching sentence
@@ -43,6 +47,8 @@ public class ExperimentActivity extends Activity {
 	private int totalNumSentences;
 
 	protected long sessionId;
+
+	private int practice_count;
 
 	@Override
 	protected void onResume() {
@@ -145,7 +151,7 @@ public class ExperimentActivity extends Activity {
 		}
 
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		ft.replace(android.R.id.content, SentenceFragment.newInstance(this, selected));
+		ft.replace(android.R.id.content, SentenceFragment.newInstance(this, selected, MODE_NORMAL));
 		ft.setTransition(FragmentTransaction.TRANSIT_NONE);
 		ft.commit();
 
@@ -170,5 +176,17 @@ public class ExperimentActivity extends Activity {
         
         db.getWritableDatabase().insert(ExperimentData.TABLE, null, values);
         db.close();
+	}
+
+	public void showNextPracticeSentence() {
+		FragmentTransaction ft = getFragmentManager().beginTransaction();
+		if (practice_count < getResources().getStringArray(R.array.practice_sentences).length) {
+			ft.replace(android.R.id.content, SentenceFragment.newInstance(this, practice_count, MODE_PRACTICE));
+			practice_count += 1;
+		} else {
+			ft.replace(android.R.id.content, TutorialFragment.newInstance(this, TutorialFragment.MODE_PART_2));
+		}
+		ft.setTransition(FragmentTransaction.TRANSIT_NONE);
+		ft.commit();
 	}
 }

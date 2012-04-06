@@ -15,7 +15,8 @@ public class SentenceFragment extends Fragment {
 	protected ExperimentActivity main;
 	private HideAndSeekTextView sentenceView;
 	private long timestamp;
-	private SentenceResult result;
+	protected SentenceResult result;
+	private int mode;
 
 	private View.OnClickListener advClickListener = new View.OnClickListener() {
 		@Override
@@ -33,15 +34,19 @@ public class SentenceFragment extends Fragment {
 			if (sentenceView.step()) {
 				main.addResult(result);
 				if (!showQuestion()) {
-					main.showNextSentence();
+					nextSentence();
 				}
 			}
 		}
 	};
+
+	private int[] questions;
+
 	
-	public static Fragment newInstance(ExperimentActivity main, int index) {
+	public static Fragment newInstance(ExperimentActivity main, int index, int mode) {
 		SentenceFragment f = new SentenceFragment();
 		f.main = main;
+		f.mode = mode;
 
 		// Set index as an argument
 		Bundle args = new Bundle();
@@ -51,14 +56,29 @@ public class SentenceFragment extends Fragment {
 		return f;
 	}
 
+	protected void nextSentence() {
+		if (mode == ExperimentActivity.MODE_PRACTICE) {
+			main.showNextPracticeSentence();
+		}else {
+			main.showNextSentence();
+		}
+	}
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// Start building result to store after the whole sentence has been read.
 		result = new SentenceResult();
 		result.sentenceIndex = getArguments().getInt(KEY_INDEX, 0);
-		result.sentence = getResources().getStringArray(R.array.sentences)[result.sentenceIndex];
-		result.condition1 = getResources().getIntArray(R.array.conditions1)[result.sentenceIndex];
-		result.condition2 = getResources().getIntArray(R.array.conditions2)[result.sentenceIndex];
+		
+		if (mode == ExperimentActivity.MODE_PRACTICE) {
+			result.sentence = getResources().getStringArray(R.array.practice_sentences)[result.sentenceIndex];
+			questions = getResources().getIntArray(R.array.practice_questions);
+		} else {
+			result.sentence = getResources().getStringArray(R.array.sentences)[result.sentenceIndex];
+			questions = getResources().getIntArray(R.array.questions);
+			result.condition1 = getResources().getIntArray(R.array.conditions1)[result.sentenceIndex];
+			result.condition2 = getResources().getIntArray(R.array.conditions2)[result.sentenceIndex];
+		}
 		
 		View v = inflater.inflate(R.layout.sentence_page, container, false);
 		
@@ -71,15 +91,15 @@ public class SentenceFragment extends Fragment {
 		
 		return v;
 	}
-	
+
 	/**
 	 * Show the question for this sentence.
 	 * @return False if there is not a question for this sentence.
 	 */
 	protected boolean showQuestion() {
-		boolean isQuestion = result.sentenceIndex < getResources().getIntArray(R.array.questions).length;
+		boolean isQuestion = result.sentenceIndex < questions.length;
 		if (isQuestion) {
-			QuestionFragment question = QuestionFragment.newInstance(main, result.sentenceIndex);
+			Fragment question = QuestionFragment.newInstance(main, result.sentenceIndex, mode);
 			FragmentTransaction ft = getFragmentManager().beginTransaction();
 			ft.replace(android.R.id.content, question);
 			ft.setTransition(FragmentTransaction.TRANSIT_NONE);

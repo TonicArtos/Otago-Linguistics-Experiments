@@ -4,33 +4,20 @@
     <string name="app_name">Self Paced Reading Experiment</string>
 
     <string-array name="sentences">
-        <item>This is a sentence.</item>
-        <item>This is sentence two.</item>
-        <item>The third sentence is more of the same.</item>
-        <item>Sentence number four.</item>
+        <item>SENTENCE.</item>
     </string-array>
     <string-array name="questions">
-        <item>A question about sentence one?</item>
-        <item>A question about the second sentence?</item>
-        <item>The final and third question?</item>
+        <item>QUESTION?</item>
     </string-array>
 
     <integer-array name="answers">
         <item>0</item>
-        <item>1</item>
-        <item>1</item>
     </integer-array>
     <integer-array name="conditions1">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
         <item>0</item>
     </integer-array>
     <integer-array name="conditions2">
         <item>2</item>
-        <item>5</item>
-        <item>1</item>
-        <item>0</item>
     </integer-array>
 
     <string name="char_pattern">\\S</string>
