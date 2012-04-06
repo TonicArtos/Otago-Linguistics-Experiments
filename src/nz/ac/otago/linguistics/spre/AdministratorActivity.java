@@ -6,8 +6,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteException;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,11 +27,11 @@ import android.widget.Toast;
  * 
  * @author Tonic Artos
  */
-public class AdministratorActivity extends Activity  {
+public class AdministratorActivity extends Activity {
 	private View.OnClickListener runExperimentClickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
-	        Intent intent = new Intent(getApplicationContext(), ExperimentActivity.class);
+			Intent intent = new Intent(getApplicationContext(), ExperimentActivity.class);
 			startActivity(intent);
 		}
 	};
@@ -43,6 +45,23 @@ public class AdministratorActivity extends Activity  {
 			}
 		}
 	};
+	private View.OnLongClickListener clearDataLongClickListener = new View.OnLongClickListener() {
+		@Override
+		public boolean onLongClick(View v) {
+			DialogFragment f = ClearDataDialogFragment.newInstance(new ClearDataDialogFragment.OnInputListener() {
+				@Override
+				public void onPositiveClick() {
+					clearData();
+				}
+
+				@Override
+				public void onNegativeClick() {
+				}
+			});
+			f.show(getFragmentManager(), "dialog");
+			return true;
+		}
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +69,13 @@ public class AdministratorActivity extends Activity  {
 		setContentView(R.layout.main);
 		((Button) findViewById(R.id.button_run_experiment)).setOnClickListener(runExperimentClickListener);
 		((Button) findViewById(R.id.button_export_data)).setOnClickListener(exportDataClickListener);
+		((Button) findViewById(R.id.button_clear_data)).setOnLongClickListener(clearDataLongClickListener);
 		updateRecordCountDisplay();
 	}
 
 	private void updateRecordCountDisplay() {
 		DatabaseHelper db = new DatabaseHelper(this);
-		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] {ExperimentData.KEY_ROWID}, null, null, null, null, null);
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID }, null, null, null, null, null);
 		if (c.getCount() == 0) {
 			findViewById(R.id.text_num_records).setVisibility(View.INVISIBLE);
 		} else {
@@ -65,17 +85,33 @@ public class AdministratorActivity extends Activity  {
 		db.close();
 	}
 
+	protected void clearData() {
+		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
+		int nr = 0;
+		try {
+			nr = db.clearData();
+		} catch (SQLiteException e) {
+			Log.e("ClearData", "Error " + e.getMessage());
+			Toast.makeText(getApplicationContext(), "An error was encountered while clearing data", Toast.LENGTH_LONG).show();
+		} finally {
+			db.close();
+		}
+		Toast.makeText(getApplicationContext(), nr + " records cleared", Toast.LENGTH_LONG).show();
+		updateRecordCountDisplay();
+	}
+
 	protected void exportData() {
 		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] {ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA}, null, null, null, null, null);
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA }, null,
+				null, null, null, null);
 		if (!c.moveToFirst()) {
-			//nothing to write out.
+			// nothing to write out.
 			return;
 		}
 		File path = Environment.getExternalStoragePublicDirectory("SPRE");
 		File file = new File(path, "experimentdata.csv");
-//		file.setReadable(true, false);
-		
+		// file.setReadable(true, false);
+
 		try {
 			path.mkdirs();
 			BufferedWriter out = new BufferedWriter(new FileWriter(file));
@@ -89,26 +125,28 @@ public class AdministratorActivity extends Activity  {
 			Log.w("ExternalStorage", "Error writing " + file, e);
 			Toast.makeText(this, "An error was encountered", Toast.LENGTH_LONG).show();
 		}
-		MediaScannerConnection.scanFile(getApplicationContext(), new String[] {file.getAbsolutePath()}, null, new MediaScannerConnection.OnScanCompletedListener() {
-			@Override
-			public void onScanCompleted(final String path, final Uri uri) {
-				runOnUiThread(new Runnable() {
+		MediaScannerConnection.scanFile(getApplicationContext(), new String[] { file.getAbsolutePath() }, null,
+				new MediaScannerConnection.OnScanCompletedListener() {
 					@Override
-					public void run() {
-//						Toast.makeText(getApplicationContext(), path + " " + uri, Toast.LENGTH_LONG).show();
-						Toast.makeText(getApplicationContext(), "Data exported to SPRE/experimentdata.csv", Toast.LENGTH_LONG).show();
+					public void onScanCompleted(final String path, final Uri uri) {
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								// Toast.makeText(getApplicationContext(), path
+								// + " " + uri, Toast.LENGTH_LONG).show();
+								Toast.makeText(getApplicationContext(), "Data exported to SPRE/experimentdata.csv", Toast.LENGTH_LONG).show();
+							}
+						});
 					}
 				});
-			}
-		});
 		c.close();
 		db.close();
-		
+
 	}
 
 	@Override
-	protected void onResume() {
-		super.onResume();
+	protected void onRestart() {
+		super.onRestart();
 		updateRecordCountDisplay();
 	}
 }

@@ -78,11 +78,42 @@
             android:text="@string/label_export_data" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/clear_data_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/export_data_section"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:paddingLeft="200dp"
+        android:paddingRight="200dp" >
+
+        <TextView
+            android:id="@+id/text_explain_clear_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.2"
+            android:text="@string/clear_data_explanation"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/button_clear_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:layout_weight="0.4"
+            android:text="@string/label_clear_data" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/text_num_records"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/export_data_section"
+        android:layout_below="@+id/clear_data_section"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Total number of records"
