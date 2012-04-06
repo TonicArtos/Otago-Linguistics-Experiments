@@ -1,5 +1,7 @@
 package nz.ac.otago.linguistics.spre;
 
+import com.michaelnovakjr.numberpicker.NumberPicker;
+
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -7,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,9 +63,12 @@ public class ProfileFragment extends Fragment {
 			return false;
 		}
 		
+		
 		result = new ProfileResult();
 		result.englishFirst = engYes.isChecked();
 		result.rightHanded = rhYes.isChecked();
+		result.age = ((NumberPicker)getView().findViewById(R.id.input_age)).getCurrent();
+		result.gender = ((RadioButton)getView().findViewById(R.id.radio_gender_female)).isChecked()? "Female": "Male";
 		main.addResult(result);
 		
 		return true;

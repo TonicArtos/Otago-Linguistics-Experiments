@@ -78,7 +78,7 @@
     <string name="question_right_handed">Are you right handed?</string>
     <string name="question_age">Age*</string>
     <string name="question_gender">Gender*</string>
-    <string name="about_required_text">*option fields</string>
+    <string name="about_required_text">*optional</string>
     <string name="answer_yes">Yes</string>
     <string name="answer_no">No</string>
     <string name="radio_male">Male</string>
@@ -94,4 +94,7 @@
     <string name="label_continue">Continue</string>
     <string name="label_skip">Skip</string>
 
+    <string name="dialog_set_number">Set</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_picker_title">Choose a number</string>
 </resources>
