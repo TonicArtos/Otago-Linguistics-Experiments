@@ -1,0 +1,1813 @@
+<items>
+	<item>
+		<sentence>
+			The infant was able to stand by himself for the first time last week.
+		</sentence>
+		<question>
+			Did the infant stand by himself last week?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Jane and John studied math and history yesterday, but they failed the
+			exams.
+		</sentence>
+		<question>
+			Did Jane and John pass the exams?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The old man amused himself by gossiping with his children and friends.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Hugh took too long to propose, and his girlfriend decided to marry
+			someone
+			else.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The boy who was wearing a blue cap went missing on his way home last
+			week.
+		</sentence>
+		<question>
+			Was the boy wearing a blue cap?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The thief noticed the boy and the girl watching him from the upstairs
+			window.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Bill will quit his job next month to take care of his kids and
+			step-children.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The father of the pretty girl cleaned up the house all by himself last
+			week.
+		</sentence>
+		<question>
+			Did the pretty girl clean the house?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Megan got angry with her boss and sued him for discrimination last month.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The pilot will fly a new airplane to Europe and back beginning next
+			week.
+		</sentence>
+		<question>
+			Will the pilot fly to Europe?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The nurse took care of the old lady who could not take care of herself.
+		</sentence>
+		<question>
+			Could the old lady take care of herself?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Cindy treated herself to a vacation in China and several other Asian
+			countries.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Margo will open bakeries in Chicago and New York after getting a loan next
+			year.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Sarah and her mother had steak, potatoes, and green beans for dinner last
+			night.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The gardener was happy with the flowers, but the owner of the house was
+			not.
+		</sentence>
+		<question>
+			Was the owner happy with the flowers?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Judy cooked in the kitchen, and Richard barbecued outside in the yard.
+		</sentence>
+		<question>
+			Did Richard barbecue in the yard?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The student who was running out of money gave himself a haircut last
+			week.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Julie dated Adam and Andy, but she married Jeff in Las Vegas last month.
+		</sentence>
+		<question>
+			Did Julie marry Adam?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Todd wanted to be a barber, but his shaky hands prevented him from
+			becoming one.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The writer of the novels thought himself to be a genius, but he wasn't.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The cute girl who was on the cover of the magazine became a famous
+			doctor.
+		</sentence>
+		<question>
+			Did the cute girl become a doctor?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The boyfriend of the model was killed in an accident while skiing last
+			week.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Yesterday, the wife of the politician discussed health care with old people.
+		</sentence>
+		<question>
+			Did the politician discuss health care?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The children of the rich man were spoiled, but they were charming and
+			handsome.
+		</sentence>
+		<question>
+			Were the children of the rich man spoiled?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Filler
+		</condition1>
+		<condition2>
+			Filler
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The son of the actress who shot himself on the set was under
+			investigation.
+		</sentence>
+		<question>
+			Was the son of the actress under investigation?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The brother of the bride who embarrassed himself at the wedding felt
+			ashamed.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The uncle of the waitress who hurt himself was shocked by the accident.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The son of the lady who politely introduced himself was popular at the
+			party.
+		</sentence>
+		<question>
+			Was the lady popular at the party?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The brother of the schoolgirl who burned himself was usually very
+			careful.
+		</sentence>
+		<question>
+			Was the brother of the schoolgirl usually careful?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The grandfather of the woman who killed himself last summer had been to
+			prison.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The grandma of the fireman who criticized herself far too often was
+			anxious.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The aunt of the schoolboy who hurt herself was concerned about the
+			injury.
+		</sentence>
+		<question>
+			Was the schoolboy concerned about the injury?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The daughter of the man who complimented herself in public was
+			beautiful.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The sister of the salesman who made a fool of herself at work was very
+			angry.
+		</sentence>
+		<question>
+			Was the sister of the salesman angry?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The daughter of the actor who hated herself for failing always seemed
+			unhappy.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The sister of the prince who injured herself falling off a roof was
+			still
+			sad.
+		</sentence>
+		<question>
+			Was the prince sad?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The son of the princess who scratched herself in public was awfully
+			embarrassed.
+		</sentence>
+		<question>
+			Was the princess embarrassed?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The brother of the ballerina who found herself in a lot of trouble
+			phoned
+			home.
+		</sentence>
+		<question>
+			Did the ballerina phone home?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The nephew of the maid who cut herself with the knife called the doctor.
+		</sentence>
+		<question>
+			Did the nephew of the maid call the doctor?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The grandfather of the policewoman who treated herself so badly was
+			troubled.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The nephew of the queen who praised herself all the time was very rude.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The uncle of the girl who prepared herself for the race was a great
+			athlete.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The grandma of the policeman who educated himself at night became a
+			teacher.
+		</sentence>
+		<question>
+			Did the grandma of the policeman become a teacher?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The niece of the fisherman who got himself a sailboat learned to sail.
+		</sentence>
+		<question>
+			Did the niece of the fisherman learn to sail?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The daughter of the king who devoted himself to the kingdom was never
+			emotional.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The sister of the boy who taught himself advanced mathematics was very
+			smart.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The aunt of the waiter who trained himself to cook wanted to own a
+			restaurant.
+		</sentence>
+		<question>
+			Did the waiter want to own a restaurant?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The niece of the butler who scolded himself for losing the key was very
+			upset.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Relative Clause
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The nurse examined the mother and the child played quietly in the
+			corner.
+		</sentence>
+		<question>
+			Did the child play quietly?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The swimmer disappointed her coach and her mother tried to console her.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The tourist photographed the swimmer and the runner got ready for the
+			race.
+		</sentence>
+		<question>
+			Did the tourist photograph the runner?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The little girl fed her pet cat and her dog wanted a can of food, too.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The ranger gave matches to the camper and his friend made a fire by the
+			tent.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Jim listened to the pianist and the singer watched the organist at the
+			concert.
+		</sentence>
+		<question>
+			Did the singer listen to the pianist?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The audience applauded the guitarist and the band cheered for him very
+			loudly.
+		</sentence>
+		<question>
+			Did the audience applaud the guitarist?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The producer replaced the actor and the actress quit the movie after the
+			fight.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Diane hugged her boyfriend and her friend felt uncomfortable watching
+			them.
+		</sentence>
+		<question>
+			Did Diane's friend feel uncomfortable?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The woman dressed her baby and her son got his clothes from the dresser.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The juggler entertained the children and their parents drank wine at the
+			party.
+		</sentence>
+		<question>
+			Did the juggler drink wine?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The crowd cheered for the model and the designer took a bow after the
+			show.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			No Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The teacher praised the girl, and her family was proud of her good
+			grades.
+		</sentence>
+		<question>
+			Was the girl's family proud of her grades?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Bobby yelled at the teacher, and the principal asked his parents for a
+			meeting.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The woman could not find Bill, and his girlfriend became nervous and
+			upset.
+		</sentence>
+		<question>
+			Could the woman find Bill?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The customer complained about the waiter, and the chef gave him a free
+			dessert.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The knight greeted the king, and the queen waved to her people at the
+			feast.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The police arrested the burglar, and his brother phoned a lawyer for
+			help.
+		</sentence>
+		<question>
+			Was the burglar arrested?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Sam hired the plumber, and the carpenter ordered the materials for the
+			house.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The actress yelled at the cameraman, and the director hurried out of the
+			room.
+		</sentence>
+		<question>
+			Did the cameraman hurry out of the room?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The journalist criticized Nick, and Sam called the newspaper to
+			complain.
+		</sentence>
+		<question>
+			Did Sam call the newspaper?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The robber shot the jeweller, and the salesman reported the crime to the
+			police.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Jenny talked to the reporter, and the photographer took pictures of the
+			scene.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			The witness identified the man, and his wife ran away from the police
+			station.
+		</sentence>
+		<question>
+			Did the witness run away from the police station?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Coordination
+		</condition1>
+		<condition2>
+			Comma
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Anne will serve the apples she picked tomorrow, but she won't serve the
+			plums.
+		</sentence>
+		<question>
+			Will Anne serve the plums?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Robert will meet the friend he phoned tomorrow, but he doesn't want to.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			David caught the fish he will cook yesterday, but it is not his favourite
+			kind.
+		</sentence>
+		<question>
+			Will David cook the fish?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Sue insulted the candidate she will debate yesterday, but she wishes she
+			hadn't.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Jane prepared the lecture she will give last week, but still needs to
+			review it.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Joseph brewed the beer he will serve last week, but it is not very tasty.
+		</sentence>
+		<question>
+			Will Joseph serve the beer?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Tom will plant the tree he bought next week, but he isn't sure where to
+			put it.
+		</sentence>
+		<question>
+			Does Tom know where to put the tree?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Lisa will change the plans she made next week, but she won't cancel any
+			of
+			them.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Jeff planned the party he will hold last month, but he hasn't sent
+			invitations.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Dan wrote the speech he will deliver last month, but he hasn't practiced
+			it yet.
+		</sentence>
+		<question>
+			Has Dan practiced the speech?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Paul will marry the woman he just met next month, but the wedding will be
+			small.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Amy will visit the man she worked with next month, but she is nervous
+			about it.
+		</sentence>
+		<question>
+			Is Amy nervous?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			High Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Linda will wear the sweater she washed yesterday, but she won't wear her
+			skirt.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			James will fix the car he drove yesterday, but he will need some help.
+		</sentence>
+		<question>
+			Did James drive a car?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Mary called the applicant she will interview tomorrow, but there was no
+			answer.
+		</sentence>
+		<question>
+			Did the applicant answer?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Mike watered the flower he will sell tomorrow, but he forgot to water the
+			bush.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Susan bought the wine she will drink next week, but she didn't buy any
+			cheese.
+		</sentence>
+		<question>
+			Did Susan buy any cheese?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Chris cleaned the bookcase he will sell next week, but it is still very
+			dusty.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Mark will answer the email he got last week, but he doesn't know what to
+			write.
+		</sentence>
+		<question>
+			Will Mark answer the email?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Cathy will burn the wood she gathered last week, but she will save some of
+			it.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Jim painted the picture he will display next month, but he isn't happy
+			with it.
+		</sentence>
+		<question>
+			Did Jim paint the picture?
+		</question>
+		<answer>
+			YES
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			John hired the clerk he will promote next month, but he fired another
+			employee.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Bob will complete the project he started last month, but Fred won't
+			finish his.
+		</sentence>
+		<question>
+
+		</question>
+		<answer>
+
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+	<item>
+		<sentence>
+			Kim will display the photos she took last month, but she won't show all
+			of them.
+		</sentence>
+		<question>
+			Will Kim show all the photos?
+		</question>
+		<answer>
+			NO
+		</answer>
+		<condition1>
+			Adverb
+		</condition1>
+		<condition2>
+			Low Attachment
+		</condition2>
+	</item>
+
+</items>
