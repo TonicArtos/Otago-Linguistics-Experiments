@@ -15,8 +15,8 @@
         <item>End of practice. If you have any questions, please ask the researcher at this point. When ready, press the button to begin.</item>
     </string-array>
 
-    <string name="good_response">That was correct!</string>
-    <string name="poor_response">Oops, sorry!</string>
+    <string name="good_response">CORRECT</string>
+    <string name="poor_response">Please proceed to the next item</string>
     
     <string name="text_break_prefix">End of block. </string>
     <string name="text_break_suffix"> blocks left. Continue when ready.</string>
