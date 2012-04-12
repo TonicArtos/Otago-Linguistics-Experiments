@@ -52,9 +52,12 @@ public class QuestionFragment extends Fragment {
 		if (mode == ExperimentActivity.MODE_PRACTICE) {
 			question = getResources().getStringArray(R.array.practice_questions)[index];
 			answer = getResources().getIntArray(R.array.practice_answers)[index];
+		} else if (mode == ExperimentActivity.MODE_EXPERIMENT1) {
+			question = getResources().getStringArray(R.array.list1_questions)[index];
+			answer = getResources().getIntArray(R.array.list1_answers)[index];
 		} else {
-			question = getResources().getStringArray(R.array.questions)[index];
-			answer = getResources().getIntArray(R.array.answers)[index];
+			question = getResources().getStringArray(R.array.list2_questions)[index];
+			answer = getResources().getIntArray(R.array.list2_answers)[index];
 		}
 		
 		// Start building our question result which we will store later.

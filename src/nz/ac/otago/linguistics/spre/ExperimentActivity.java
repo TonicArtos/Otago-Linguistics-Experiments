@@ -17,9 +17,11 @@ import android.view.View;
  * @author Tonic Artos
  */
 public class ExperimentActivity extends Activity {
-	public static final int MODE_NORMAL = 0;
-	public static final int MODE_PRACTICE = 1;
-	
+	public static final int MODE_PRACTICE = 0;
+	public static final int MODE_EXPERIMENT1 = 1;
+	public static final int MODE_EXPERIMENT2 = 2;
+	protected static final String KEY_MODE = "key_mode";
+
 	/**
 	 * A result that can save its data to a given database.
 	 * 
@@ -27,7 +29,6 @@ public class ExperimentActivity extends Activity {
 	 */
 	public interface Result {
 	}
-
 
 	/**
 	 * Indices match up with sentences. A true value means the matching sentence
@@ -49,6 +50,7 @@ public class ExperimentActivity extends Activity {
 	protected long sessionId;
 
 	private int practice_count;
+	private int mode;
 
 	@Override
 	protected void onResume() {
@@ -62,24 +64,30 @@ public class ExperimentActivity extends Activity {
 	}
 
 	/**
-	 * Called when the activity is first created.
+	 * Called when the activity is first created. Uses intent to figure out which mode to run in.
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// setContentView(R.layout.landing_page);
+		
+		mode = getIntent().getIntExtra(KEY_MODE, MODE_EXPERIMENT1);
 
 		results = new Vector<ExperimentActivity.Result>();
 
 		rand = new Random();
 		numUsedSentences = 0;
-		totalNumSentences = getResources().getStringArray(R.array.sentences).length;
+		if (mode == MODE_EXPERIMENT1) {
+			totalNumSentences = getResources().getStringArray(R.array.list1_sentences).length;
+		} else {
+			totalNumSentences = getResources().getStringArray(R.array.list2_sentences).length;
+		}
 		usedSentences = new boolean[totalNumSentences]; // All elements
 														// initialise to false
-		
+
 		// Work out this session ID;
 		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] {ExperimentData.KEY_ROWID}, null, null, null, null, null);
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID }, null, null, null, null, null);
 		if (!c.moveToLast()) {
 			sessionId = 1;
 		} else {
@@ -89,7 +97,7 @@ public class ExperimentActivity extends Activity {
 		db.close();
 
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		ft.replace(android.R.id.content, ProfileFragment.newInstance(this));
+		ft.replace(android.R.id.content, ProfileFragment.newInstance(this, mode));
 		ft.setTransition(FragmentTransaction.TRANSIT_NONE);
 		ft.commit();
 	}
@@ -131,13 +139,13 @@ public class ExperimentActivity extends Activity {
 			sentencesSinceBreak = 0;
 			// Work out number of blocks remaining.
 			int numBlocksRemaining = (totalNumSentences - numUsedSentences) / 12;
-			
+
 			// Create break page.
 			FragmentTransaction ft = getFragmentManager().beginTransaction();
 			ft.replace(android.R.id.content, PauseFragment.newInstance(this, PauseFragment.MODE_BREAK, numBlocksRemaining));
 			ft.setTransition(FragmentTransaction.TRANSIT_NONE);
 			ft.commit();
-			
+
 			return;
 		}
 
@@ -151,7 +159,7 @@ public class ExperimentActivity extends Activity {
 		}
 
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		ft.replace(android.R.id.content, SentenceFragment.newInstance(this, selected, MODE_NORMAL));
+		ft.replace(android.R.id.content, SentenceFragment.newInstance(this, selected, mode));
 		ft.setTransition(FragmentTransaction.TRANSIT_NONE);
 		ft.commit();
 
@@ -164,18 +172,19 @@ public class ExperimentActivity extends Activity {
 	 * Save the experiment results into the database.
 	 */
 	private void storeResults() {
-        DatabaseHelper db = new DatabaseHelper(this);
-        ContentValues values = new ContentValues();
+		DatabaseHelper db = new DatabaseHelper(this);
+		ContentValues values = new ContentValues();
 
-        String s = "";
-        for (Result r : results) {
-        	s += r.toString();
-        }
-        
-        values.put(ExperimentData.KEY_DATA, s);
-        
-        db.getWritableDatabase().insert(ExperimentData.TABLE, null, values);
-        db.close();
+		String s = "";
+		for (Result r : results) {
+			s += r.toString();
+		}
+
+		values.put(ExperimentData.KEY_DATA_SET, (mode == MODE_EXPERIMENT1)? "a": "b");
+		values.put(ExperimentData.KEY_DATA, s);
+
+		db.getWritableDatabase().insert(ExperimentData.TABLE, null, values);
+		db.close();
 	}
 
 	public void showNextPracticeSentence() {

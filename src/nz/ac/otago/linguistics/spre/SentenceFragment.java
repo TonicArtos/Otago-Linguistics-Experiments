@@ -73,11 +73,16 @@ public class SentenceFragment extends Fragment {
 		if (mode == ExperimentActivity.MODE_PRACTICE) {
 			result.sentence = getResources().getStringArray(R.array.practice_sentences)[result.sentenceIndex];
 			questions = getResources().getIntArray(R.array.practice_questions);
+		} else if (mode == ExperimentActivity.MODE_EXPERIMENT1) {
+			result.sentence = getResources().getStringArray(R.array.list1_sentences)[result.sentenceIndex];
+			questions = getResources().getIntArray(R.array.list1_questions);
+			result.condition1 = getResources().getIntArray(R.array.list1_conditions1)[result.sentenceIndex];
+			result.condition2 = getResources().getIntArray(R.array.list1_conditions2)[result.sentenceIndex];
 		} else {
-			result.sentence = getResources().getStringArray(R.array.sentences)[result.sentenceIndex];
-			questions = getResources().getIntArray(R.array.questions);
-			result.condition1 = getResources().getIntArray(R.array.conditions1)[result.sentenceIndex];
-			result.condition2 = getResources().getIntArray(R.array.conditions2)[result.sentenceIndex];
+			result.sentence = getResources().getStringArray(R.array.list2_sentences)[result.sentenceIndex];
+			questions = getResources().getIntArray(R.array.list2_questions);
+			result.condition1 = getResources().getIntArray(R.array.list2_conditions1)[result.sentenceIndex];
+			result.condition2 = getResources().getIntArray(R.array.list2_conditions2)[result.sentenceIndex];
 		}
 		
 		View v = inflater.inflate(R.layout.sentence_page, container, false);

@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnFocusChangeListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,10 +27,19 @@ import android.widget.Toast;
  * @author Tonic Artos
  */
 public class AdministratorActivity extends Activity {
-	private View.OnClickListener runExperimentClickListener = new View.OnClickListener() {
+	private View.OnClickListener runExperiment1ClickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
 			Intent intent = new Intent(getApplicationContext(), ExperimentActivity.class);
+			intent.putExtra(ExperimentActivity.KEY_MODE, ExperimentActivity.MODE_EXPERIMENT1);
+			startActivity(intent);
+		}
+	};
+	private View.OnClickListener runExperiment2ClickListener = new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent(getApplicationContext(), ExperimentActivity.class);
+			intent.putExtra(ExperimentActivity.KEY_MODE, ExperimentActivity.MODE_EXPERIMENT2);
 			startActivity(intent);
 		}
 	};
@@ -67,10 +75,18 @@ public class AdministratorActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		((Button) findViewById(R.id.button_run_experiment)).setOnClickListener(runExperimentClickListener);
+		
+		// We want to make sure the database is updated before we use it anywhere. 
+		DatabaseHelper db = new DatabaseHelper(this);
+		db.getWritableDatabase();
+		db.close();
+		
+		((Button) findViewById(R.id.button_run_experiment1)).setOnClickListener(runExperiment1ClickListener);
+		((Button) findViewById(R.id.button_run_experiment2)).setOnClickListener(runExperiment2ClickListener);
 		((Button) findViewById(R.id.button_export_data)).setOnClickListener(exportDataClickListener);
 		((Button) findViewById(R.id.button_clear_data)).setOnLongClickListener(clearDataLongClickListener);
 		updateRecordCountDisplay();
+		
 	}
 
 	private void updateRecordCountDisplay() {
@@ -79,6 +95,7 @@ public class AdministratorActivity extends Activity {
 		if (c.getCount() == 0) {
 			findViewById(R.id.text_num_records).setVisibility(View.INVISIBLE);
 		} else {
+			findViewById(R.id.text_num_records).setVisibility(View.VISIBLE);
 			((TextView) findViewById(R.id.text_num_records)).setText(c.getCount() + " Records");
 		}
 		c.close();
@@ -116,7 +133,7 @@ public class AdministratorActivity extends Activity {
 			path.mkdirs();
 			BufferedWriter out = new BufferedWriter(new FileWriter(file));
 			do {
-				out.write("\nSession ID, " + c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID)) + "\n");
+				out.write("\nSession ID, " + c.getString(c.getColumnIndex(ExperimentData.KEY_DATA_SET)) + c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID)) + "\n");
 				out.write(c.getString(c.getColumnIndex(ExperimentData.KEY_DATA)));
 			} while (c.moveToNext());
 			out.flush();
