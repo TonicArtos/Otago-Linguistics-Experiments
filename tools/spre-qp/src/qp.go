@@ -49,7 +49,7 @@ func init() {
 
 // Structure of xml to read in.
 type Data struct {
-	Items Items `xml:"Item"`
+	Items Items `xml:"item"`
 }
 
 type Items []*Item
@@ -68,11 +68,11 @@ func (a QFirst) Less(i, j int) bool {
 }
 
 type Item struct {
-	Sentence   string
-	Question   string
-	Answer     string
-	Condition1 string
-	Condition2 string
+	Sentence   string `xml:"sentence"`
+	Question   string `xml:"question"`
+	Answer     string `xml:"answer"`
+	Condition1 string `xml:"condition1"`
+	Condition2 string `xml:"condition2"`
 	Index      int
 }
 
