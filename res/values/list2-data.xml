@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list2_sentences">
+        <item>The pilot will fly a new airplane to Europe and back beginning next week.</item>
+        <item>Mark will answer the email he got last week, but he doesn\'t know what to write.</item>
+        <item>Kim will display the photos she took last month, but she won\'t show all of them.</item>
+        <item>Joseph brewed the beer he will serve last week, but it is not very tasty.</item>
+        <item>David caught the fish he will cook yesterday, but it is not his favourite kind.</item>
+        <item>Anne will serve the apples she picked tomorrow, but she won\'t serve the plums.</item>
+        <item>The children of the rich man were spoiled, but they were charming and handsome.</item>
+        <item>The son of the actress who shot himself on the set was under investigation.</item>
+        <item>The sister of the salesman who made a fool of herself at work was very angry.</item>
+        <item>The aunt of the schoolboy who hurt herself was concerned about the injury.</item>
+        <item>The son of the princess who scratched herself in public was awfully embarrassed.</item>
+        <item>The sister of the prince who injured herself falling off a roof was still sad.</item>
+        <item>The gardener was happy with the flowers, but the owner of the house was not.</item>
+        <item>The son of the lady who politely introduced himself was popular at the party.</item>
+        <item>The teacher praised the girl, and her family was proud of her good grades.</item>
+        <item>The police arrested the burglar, and his brother phoned a lawyer for help.</item>
+        <item>The brother of the schoolgirl who burned himself was usually very careful.</item>
+        <item>The boy who was wearing a blue cap went missing on his way home last week.</item>
+        <item>Amy will visit the man she worked with next month, but she is nervous about it.</item>
+        <item>Dan wrote the speech he will deliver last month, but he hasn\'t practiced it yet.</item>
+        <item>Tom will plant the tree he bought next week, but he isn\'t sure where to put it.</item>
+        <item>The witness identified the man, and his wife ran away from the police station.</item>
+        <item>The aunt of the waiter who trained himself to cook wanted to own a restaurant.</item>
+        <item>The tourist photographed the swimmer and the runner got ready for the race.</item>
+        <item>Jim listened to the pianist and the singer watched the organist at the concert.</item>
+        <item>The father of the pretty girl cleaned up the house all by himself last week.</item>
+        <item>Yesterday, the wife of the politician discussed health care with old people.</item>
+        <item>The niece of the fisherman who got himself a sailboat learned to sail.</item>
+        <item>The nephew of the maid who cut herself with the knife called the doctor.</item>
+        <item>The juggler entertained the children and their parents drank wine at the party.</item>
+        <item>The infant was able to stand by himself for the first time last week.</item>
+        <item>The grandma of the policeman who educated himself at night became a teacher.</item>
+        <item>The cute girl who was on the cover of the magazine became a famous doctor.</item>
+        <item>The nurse examined the mother and the child played quietly in the corner.</item>
+        <item>The actress yelled at the cameraman, and the director hurried out of the room.</item>
+        <item>The brother of the ballerina who found herself in a lot of trouble phoned home.</item>
+        <item>The audience applauded the guitarist and the band cheered for him very loudly.</item>
+        <item>Mary called the applicant she will interview tomorrow, but there was no answer.</item>
+        <item>Susan bought the wine she will drink next week, but she didn\'t buy any cheese.</item>
+        <item>The journalist criticized Nick, and Sam called the newspaper to complain.</item>
+        <item>Judy cooked in the kitchen, and Richard barbecued outside in the yard.</item>
+        <item>Julie dated Adam and Andy, but she married Jeff in Las Vegas last month.</item>
+        <item>Jim painted the picture he will display next month, but he isn\'t happy with it.</item>
+        <item>Jane and John studied math and history yesterday, but they failed the exams.</item>
+        <item>James will fix the car he drove yesterday, but he will need some help.</item>
+        <item>Diane hugged her boyfriend and her friend felt uncomfortable watching them.</item>
+        <item>The woman could not find Bill, and his girlfriend became nervous and upset.</item>
+        <item>The nurse took care of the old lady who could not take care of herself.</item>
+        <item>The robber shot the jeweller, and the salesman reported the crime to the police.</item>
+        <item>Jenny talked to the reporter, and the photographer took pictures of the scene.</item>
+        <item>Bill will quit his job next month to take care of his kids and step-children.</item>
+        <item>Robert will meet the friend he phoned tomorrow, but he doesn\'t want to.</item>
+        <item>The thief noticed the boy and the girl watching him from the upstairs window.</item>
+        <item>Sue insulted the candidate she will debate yesterday, but she wishes she hadn\'t.</item>
+        <item>Jane prepared the lecture she will give last week, but still needs to review it.</item>
+        <item>Hugh took too long to propose, and his girlfriend decided to marry someone else.</item>
+        <item>Lisa will change the plans she made next week, but she won\'t cancel any of them.</item>
+        <item>Jeff planned the party he will hold last month, but he hasn\'t sent invitations.</item>
+        <item>Paul will marry the woman he just met next month, but the wedding will be small.</item>
+        <item>The old man amused himself by gossiping with his children and friends.</item>
+        <item>Linda will wear the sweater she washed yesterday, but she won\'t wear her skirt.</item>
+        <item>Mike watered the flower he will sell tomorrow, but he forgot to water the bush.</item>
+        <item>Chris cleaned the bookcase he will sell next week, but it is still very dusty.</item>
+        <item>Cathy will burn the wood she gathered last week, but she will save some of it.</item>
+        <item>John hired the clerk he will promote next month, but he fired another employee.</item>
+        <item>Bob will complete the project he started last month, but Fred won\'t finish his.</item>
+        <item>The student who was running out of money gave himself a haircut last week.</item>
+        <item>The woman dressed her baby and her son got his clothes from the dresser.</item>
+        <item>The boyfriend of the model was killed in an accident while skiing last week.</item>
+        <item>Todd wanted to be a barber, but his shaky hands prevented him from becoming one.</item>
+        <item>Margo will open bakeries in Chicago and New York after getting a loan next year.</item>
+        <item>The brother of the bride who embarrassed himself at the wedding felt ashamed.</item>
+        <item>The uncle of the waitress who hurt himself was shocked by the accident.</item>
+        <item>The grandfather of the woman who killed himself last summer had been to prison.</item>
+        <item>The grandma of the fireman who criticized herself far too often was anxious.</item>
+        <item>The daughter of the man who complimented herself in public was beautiful.</item>
+        <item>Sarah and her mother had steak, potatoes, and green beans for dinner last night.</item>
+        <item>The daughter of the actor who hated herself for failing always seemed unhappy.</item>
+        <item>Cindy treated herself to a vacation in China and several other Asian countries.</item>
+        <item>The writer of the novels thought himself to be a genius, but he wasn\'t.</item>
+        <item>The grandfather of the policewoman who treated herself so badly was troubled.</item>
+        <item>The nephew of the queen who praised herself all the time was very rude.</item>
+        <item>The uncle of the girl who prepared herself for the race was a great athlete.</item>
+        <item>The daughter of the king who devoted himself to the kingdom was never emotional.</item>
+        <item>The sister of the boy who taught himself advanced mathematics was very smart.</item>
+        <item>The niece of the butler who scolded himself for losing the key was very upset.</item>
+        <item>Megan got angry with her boss and sued him for discrimination last month.</item>
+        <item>The swimmer disappointed her coach and her mother tried to console her.</item>
+        <item>The little girl fed her pet cat and her dog wanted a can of food, too.</item>
+        <item>The ranger gave matches to the camper and his friend made a fire by the tent.</item>
+        <item>The producer replaced the actor and the actress quit the movie after the fight.</item>
+        <item>The crowd cheered for the model and the designer took a bow after the show.</item>
+        <item>Bobby yelled at the teacher, and the principal asked his parents for a meeting.</item>
+        <item>The customer complained about the waiter, and the chef gave him a free dessert.</item>
+        <item>The knight greeted the king, and the queen waved to her people at the feast.</item>
+        <item>Sam hired the plumber, and the carpenter ordered the materials for the house.</item>
+    </string-array>
+
+    <integer-array name="list2_conditions1">
+        <item>0</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+        <item>3</item>
+        <item>1</item>
+        <item>0</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>3</item>
+        <item>1</item>
+        <item>3</item>
+        <item>3</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>3</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>3</item>
+        <item>3</item>
+        <item>1</item>
+        <item>3</item>
+        <item>2</item>
+        <item>2</item>
+        <item>3</item>
+        <item>0</item>
+        <item>0</item>
+        <item>2</item>
+        <item>0</item>
+        <item>2</item>
+        <item>3</item>
+        <item>3</item>
+        <item>0</item>
+        <item>3</item>
+        <item>3</item>
+        <item>0</item>
+        <item>2</item>
+        <item>0</item>
+        <item>2</item>
+        <item>2</item>
+        <item>0</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>0</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>0</item>
+        <item>3</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+        <item>3</item>
+    </integer-array>
+    <integer-array name="list2_conditions2">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
+    <string-array name="list2_questions">
+        <item>Will the pilot fly to Europe?</item>
+        <item>Will Mark answer the email?</item>
+        <item>Will Kim show all the photos?</item>
+        <item>Will Joseph serve the beer?</item>
+        <item>Will David cook the fish?</item>
+        <item>Will Anne serve the plums?</item>
+        <item>Were the children of the rich man spoiled?</item>
+        <item>Was the son of the actress under investigation?</item>
+        <item>Was the sister of the salesman angry?</item>
+        <item>Was the schoolboy concerned about the injury?</item>
+        <item>Was the princess embarrassed?</item>
+        <item>Was the prince sad?</item>
+        <item>Was the owner happy with the flowers?</item>
+        <item>Was the lady popular at the party?</item>
+        <item>Was the girl\'s family proud of her grades?</item>
+        <item>Was the burglar arrested?</item>
+        <item>Was the brother of the schoolgirl usually careful?</item>
+        <item>Was the boy wearing a blue cap?</item>
+        <item>Is Amy nervous?</item>
+        <item>Has Dan practiced the speech?</item>
+        <item>Does Tom know where to put the tree?</item>
+        <item>Did the witness run away from the police station?</item>
+        <item>Did the waiter want to own a restaurant?</item>
+        <item>Did the tourist photograph the runner?</item>
+        <item>Did the singer listen to the pianist?</item>
+        <item>Did the pretty girl clean the house?</item>
+        <item>Did the politician discuss health care?</item>
+        <item>Did the niece of the fisherman learn to sail?</item>
+        <item>Did the nephew of the maid call the doctor?</item>
+        <item>Did the juggler drink wine?</item>
+        <item>Did the infant stand by himself last week?</item>
+        <item>Did the grandma of the policeman become a teacher?</item>
+        <item>Did the cute girl become a doctor?</item>
+        <item>Did the child play quietly?</item>
+        <item>Did the cameraman hurry out of the room?</item>
+        <item>Did the ballerina phone home?</item>
+        <item>Did the audience applaud the guitarist?</item>
+        <item>Did the applicant answer?</item>
+        <item>Did Susan buy any cheese?</item>
+        <item>Did Sam call the newspaper?</item>
+        <item>Did Richard barbecue in the yard?</item>
+        <item>Did Julie marry Adam?</item>
+        <item>Did Jim paint the picture?</item>
+        <item>Did Jane and John pass the exams?</item>
+        <item>Did James drive a car?</item>
+        <item>Did Diane\'s friend feel uncomfortable?</item>
+        <item>Could the woman find Bill?</item>
+        <item>Could the old lady take care of herself?</item>
+    </string-array>
+
+    <integer-array name="list2_answers">
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+    <integer-array name="list2_indices">
+        <item>9</item>
+        <item>90</item>
+        <item>95</item>
+        <item>77</item>
+        <item>74</item>
+        <item>72</item>
+        <item>23</item>
+        <item>24</item>
+        <item>33</item>
+        <item>31</item>
+        <item>36</item>
+        <item>35</item>
+        <item>14</item>
+        <item>27</item>
+        <item>60</item>
+        <item>65</item>
+        <item>28</item>
+        <item>4</item>
+        <item>83</item>
+        <item>81</item>
+        <item>78</item>
+        <item>71</item>
+        <item>46</item>
+        <item>50</item>
+        <item>53</item>
+        <item>7</item>
+        <item>22</item>
+        <item>43</item>
+        <item>38</item>
+        <item>58</item>
+        <item>0</item>
+        <item>42</item>
+        <item>20</item>
+        <item>48</item>
+        <item>67</item>
+        <item>37</item>
+        <item>54</item>
+        <item>86</item>
+        <item>88</item>
+        <item>68</item>
+        <item>15</item>
+        <item>17</item>
+        <item>92</item>
+        <item>1</item>
+        <item>85</item>
+        <item>56</item>
+        <item>62</item>
+        <item>10</item>
+        <item>69</item>
+        <item>70</item>
+        <item>6</item>
+        <item>73</item>
+        <item>5</item>
+        <item>75</item>
+        <item>76</item>
+        <item>3</item>
+        <item>79</item>
+        <item>80</item>
+        <item>82</item>
+        <item>2</item>
+        <item>84</item>
+        <item>87</item>
+        <item>89</item>
+        <item>91</item>
+        <item>93</item>
+        <item>94</item>
+        <item>16</item>
+        <item>57</item>
+        <item>21</item>
+        <item>18</item>
+        <item>12</item>
+        <item>25</item>
+        <item>26</item>
+        <item>29</item>
+        <item>30</item>
+        <item>32</item>
+        <item>13</item>
+        <item>34</item>
+        <item>11</item>
+        <item>19</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>44</item>
+        <item>45</item>
+        <item>47</item>
+        <item>8</item>
+        <item>49</item>
+        <item>51</item>
+        <item>52</item>
+        <item>55</item>
+        <item>59</item>
+        <item>61</item>
+        <item>63</item>
+        <item>64</item>
+        <item>66</item>
+    </integer-array>
+
+</resources>

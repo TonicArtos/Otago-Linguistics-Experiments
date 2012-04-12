@@ -2,24 +2,6 @@
 <resources>
 
     <string name="app_name">Self Paced Reading Experiment</string>
-
-    <string-array name="sentences">
-        <item>SENTENCE.</item>
-    </string-array>
-    <string-array name="questions">
-        <item>QUESTION?</item>
-    </string-array>
-
-    <integer-array name="answers">
-        <item>0</item>
-    </integer-array>
-    <integer-array name="conditions1">
-        <item>0</item>
-    </integer-array>
-    <integer-array name="conditions2">
-        <item>2</item>
-    </integer-array>
-
     <string name="char_pattern">\\S</string>
     <string name="replace_char">-</string>
 
@@ -29,40 +11,6 @@
         <item>Proceed as quickly as you can, but... Make sure you fully understand what you are reading. Occasionally, you will be asked comprehension questions. Answer these questions by pressing either the red button for No or the right button for Yes, whichever one corresponds to the correct answer.\n\n(Press the button now to continue)</item>
         <item>The following items are for practice.</item>
     </string-array>
-    <string-array name="practice_sentences">
-        <item>The husband of the beautiful woman bought her roses and candy for her birthday.</item>
-        <item>The reporter had dinner yesterday with the baseball player who Kevin admired.</item>
-        <item>The mother of the prisoner sent him packages that contained cookies and novels.</item>
-        <item>Maya played with the blocks and the balls, but she soon got bored with them.</item>
-        <item>The therapist set up a meeting with the upset woman and her husband yesterday.</item>
-        <item>The patient who the doctor treated became better after only a few treatments.</item>
-        <item>The visitors at the zoo watched the zookeeper who the monkeys and apes teased.</item>
-        <item>The semester will start next week, but the students and teachers are not ready.</item>
-    </string-array>
-    <string-array name="practice_questions">
-        <item>Did the woman buy roses?</item>
-        <item>Did the reporter have dinner with Kevin?</item>
-        <item>Did the mother send packages to the prisoner?</item>
-        <item>Did Maya play with the blocks?</item>
-    </string-array>
-
-    <integer-array name="practice_answers">
-        <item>0</item>
-        <item>0</item>
-        <item>1</item>
-        <item>1</item>
-    </integer-array>
-    <integer-array name="practice_indices">
-        <item>0</item>
-        <item>4</item>
-        <item>6</item>
-        <item>2</item>
-        <item>3</item>
-        <item>1</item>
-        <item>5</item>
-        <item>7</item>
-    </integer-array>
-
     <string-array name="tutorial_part_2">
         <item>End of practice. If you have any questions, please ask the researcher at this point. When ready, press the button to begin.</item>
     </string-array>
@@ -93,11 +41,11 @@
     <string name="label_export_data">Export Data</string>
     <string name="label_continue">Continue</string>
     <string name="label_skip">Skip</string>
-
     <string name="dialog_set_number">Set</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_picker_title">Choose a number</string>
     <string name="clear_data_explanation">To clear the experiment data set press and hold the button, then click yes in the dialog. Clearing the data is permanent so be careful.</string>
     <string name="label_clear_data">Clear Data</string>
     <string name="text_clear_data">Clear all collected data?</string>
+
 </resources>
