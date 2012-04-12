@@ -1,8 +1,6 @@
 package nz.ac.otago.linguistics.spre;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.graphics.PorterDuff.Mode;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -37,14 +37,27 @@
             android:text="@string/experiment_run_explantion"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <Button
-            android:id="@+id/button_run_experiment"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="100dp"
             android:layout_weight="0.4"
-            android:text="@string/label_run_experiment" />
+                android:layout_marginLeft="100dp"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/button_run_experiment1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_run_experiment1" />
+
+            <Button
+                android:id="@+id/button_run_experiment2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_run_experiment2" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout

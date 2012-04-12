@@ -15,11 +15,13 @@
         <item>End of practice. If you have any questions, please ask the researcher at this point. When ready, press the button to begin.</item>
     </string-array>
 
-    <string name="text_break_suffix"> blocks left. Continue when ready.</string>
     <string name="good_response">That was correct!</string>
     <string name="poor_response">Oops, sorry!</string>
+    
     <string name="text_break_prefix">End of block. </string>
+    <string name="text_break_suffix"> blocks left. Continue when ready.</string>
     <string name="text_thanks">That\'s the end, thank you.</string>
+    
     <string name="subject_introduction">Welcome to the\nSelf Paced Reading Experiment</string>
     <string name="request_text">Please fill in the following information.</string>
     <string name="question_is_english_first">Is English your first language?</string>
@@ -34,16 +36,20 @@
     <string name="radio_yes">Yes</string>
     <string name="radio_no">No</string>
     <string name="text_complain_incomplete_info">Please complete the information.</string>
+    
     <string name="admin_introduction">Self Paced Reading Experiment</string>
     <string name="experiment_run_explantion">When an experiment is run the data will not be permanently saved until the entire experiment is complete.</string>
-    <string name="label_run_experiment">Begin Experiment</string>
+    <string name="label_run_experiment1">Begin Experiment v1</string>
+    <string name="label_run_experiment2">Begin Experiment v2</string>
     <string name="export_data_explanation">When the data is exported it is saved to the device\'s internal disk. To access this data you will need to plug the device into a computer and copy it in the regular manner.</string>
     <string name="label_export_data">Export Data</string>
     <string name="label_continue">Continue</string>
     <string name="label_skip">Skip</string>
+    
     <string name="dialog_set_number">Set</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_picker_title">Choose a number</string>
+    
     <string name="clear_data_explanation">To clear the experiment data set press and hold the button, then click yes in the dialog. Clearing the data is permanent so be careful.</string>
     <string name="label_clear_data">Clear Data</string>
     <string name="text_clear_data">Clear all collected data?</string>
