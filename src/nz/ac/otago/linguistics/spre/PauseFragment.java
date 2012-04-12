@@ -44,7 +44,7 @@ public class PauseFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.text_page, container, false);
 		if (mode == MODE_BREAK) {
-			((TextView) v.findViewById(R.id.text)).setText(R.string.text_break_prefix + blocksToGo + R.string.text_break_suffix);
+			((TextView) v.findViewById(R.id.text)).setText(getResources().getString(R.string.text_break_prefix) + " " + blocksToGo + " " + getResources().getString(R.string.text_break_suffix));
 		} else {
 			((TextView) v.findViewById(R.id.text)).setText(R.string.text_thanks);
 		}

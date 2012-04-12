@@ -17,6 +17,7 @@ import android.view.View;
  * @author Tonic Artos
  */
 public class ExperimentActivity extends Activity {
+	private static final int BREAK_PERIOD = 12;
 	public static final int MODE_PRACTICE = 0;
 	public static final int MODE_EXPERIMENT1 = 1;
 	public static final int MODE_EXPERIMENT2 = 2;
@@ -134,11 +135,11 @@ public class ExperimentActivity extends Activity {
 			return;
 		}
 
-		// Give the user a break every 12 sentences.
-		if (sentencesSinceBreak >= 12) {
+		// Give the user a break every 12 (BREAK_PERIOD) sentences.
+		if (sentencesSinceBreak >= BREAK_PERIOD) {
 			sentencesSinceBreak = 0;
 			// Work out number of blocks remaining.
-			int numBlocksRemaining = (totalNumSentences - numUsedSentences) / 12;
+			int numBlocksRemaining = (totalNumSentences - numUsedSentences) / BREAK_PERIOD;
 
 			// Create break page.
 			FragmentTransaction ft = getFragmentManager().beginTransaction();
