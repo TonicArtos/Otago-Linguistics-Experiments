@@ -39,8 +39,8 @@
     
     <string name="admin_introduction">Self Paced Reading Experiment</string>
     <string name="experiment_run_explantion">When an experiment is run the data will not be permanently saved until the entire experiment is complete.</string>
-    <string name="label_run_experiment1">Begin Experiment v1</string>
-    <string name="label_run_experiment2">Begin Experiment v2</string>
+    <string name="label_run_experiment1">Begin Experiment A</string>
+    <string name="label_run_experiment2">Begin Experiment B</string>
     <string name="export_data_explanation">When the data is exported it is saved to the device\'s internal disk. To access this data you will need to plug the device into a computer and copy it in the regular manner.</string>
     <string name="label_export_data">Export Data</string>
     <string name="label_continue">Continue</string>
