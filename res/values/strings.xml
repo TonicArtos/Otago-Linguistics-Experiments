@@ -7,7 +7,7 @@
 
     <string-array name="tutorial_part_1">
         <item>Press the button with one finger to begin.</item>
-        <item>In this experiment you will read sentences one word at a time. As you read each word, press the button on the right as soon as you are ready to continue the sentence.\n\n(Press the button now to continue)</item>
+        <item>In this experiment you will read sentences one word at a time. As you read each word, press the button at the bottom as soon as you are ready to continue the sentence.\n\n(Press the button now to continue)</item>
         <item>Proceed as quickly as you can, but... Make sure you fully understand what you are reading. Occasionally, you will be asked comprehension questions. Answer these questions by pressing either the red button for No or the green button for Yes, whichever one corresponds to the correct answer.\n\n(Press the button now to continue)</item>
         <item>The following items are for practice.</item>
     </string-array>
