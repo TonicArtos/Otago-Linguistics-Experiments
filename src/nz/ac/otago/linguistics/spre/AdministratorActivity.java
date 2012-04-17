@@ -119,7 +119,7 @@ public class AdministratorActivity extends Activity {
 
 	protected void exportData() {
 		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA }, null,
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA,ExperimentData.KEY_DATA_SET }, null,
 				null, null, null, null);
 		if (!c.moveToFirst()) {
 			// nothing to write out.
