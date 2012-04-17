@@ -19,7 +19,7 @@ public class SentenceResult implements ExperimentActivity.Result {
 	@Override
 	public String toString() {
 		String s = "";
-		s += "Sentence ID, " + (sentenceIndex + 1) + "\n";
+		s += "\nSentence ID, " + (sentenceIndex + 1) + "\n";
 		;
 		// Normalise index and fetch matching strings
 		s += "Condition1," + condition1Text[(condition1 < 0 || condition1Text.length <= condition1) ? 0 : condition1] + "\n";
