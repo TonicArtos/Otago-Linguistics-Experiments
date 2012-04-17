@@ -13,8 +13,8 @@ public class SentenceResult implements ExperimentActivity.Result {
 	public int condition1;
 	public int condition2;
 	protected Vector<Click> clicks = new Vector<Click>();
-	private String[] condition1Text = new String[] { "Filler", "Relative Clause", "Adverb", "Coordination" };
-	private String[] condition2Text = new String[] { "Filler", "High", "Low" };
+	private static final String[] condition1Text = new String[] { "Filler", "Relative Clause", "Adverb", "Coordination" };
+	public static final String[] condition2Text = new String[] { "Filler", "High Attachment", "Low Attachment", "Comma", "No Comma" };
 
 	@Override
 	public String toString() {
