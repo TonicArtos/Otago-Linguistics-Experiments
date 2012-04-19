@@ -1,4 +1,4 @@
-package nz.ac.otago.linguistics.spre;
+package nz.ac.otago.linguistics.sgre;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

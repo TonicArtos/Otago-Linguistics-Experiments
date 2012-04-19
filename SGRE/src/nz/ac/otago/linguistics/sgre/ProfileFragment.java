@@ -1,4 +1,5 @@
-package nz.ac.otago.linguistics.spre;
+package nz.ac.otago.linguistics.sgre;
+
 
 import com.michaelnovakjr.numberpicker.NumberPicker;
 

@@ -1,4 +1,4 @@
-package nz.ac.otago.linguistics.spre;
+package nz.ac.otago.linguistics.sgre;
 
 import java.util.Vector;
 

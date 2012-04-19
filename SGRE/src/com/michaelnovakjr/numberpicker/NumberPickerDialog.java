@@ -15,7 +15,7 @@
  */
 package com.michaelnovakjr.numberpicker;
 
-import nz.ac.otago.linguistics.spre.R;
+import nz.ac.otago.linguistics.sgre.R;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
