@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/admin_introduction"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/run_exp_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/title"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:paddingLeft="200dp"
+        android:paddingRight="200dp" >
+
+        <TextView
+            android:id="@+id/text_explain_run_experiment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.2"
+            android:text="@string/experiment_run_explantion"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+                android:layout_marginLeft="100dp"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/button_run_experiment1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_run_experiment1" />
+
+            <Button
+                android:id="@+id/button_run_experiment2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_run_experiment2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/export_data_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/run_exp_section"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:paddingLeft="200dp"
+        android:paddingRight="200dp" >
+
+        <TextView
+            android:id="@+id/text_explain_export"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.2"
+            android:text="@string/export_data_explanation"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/button_export_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:layout_weight="0.4"
+            android:text="@string/label_export_data" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/clear_data_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/export_data_section"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:paddingLeft="200dp"
+        android:paddingRight="200dp" >
+
+        <TextView
+            android:id="@+id/text_explain_clear_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.2"
+            android:text="@string/clear_data_explanation"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/button_clear_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:layout_weight="0.4"
+            android:text="@string/label_clear_data" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_num_records"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clear_data_section"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Total number of records"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

@@ -1,0 +1,105 @@
+<Items>
+	<Item>
+		<Sentence>
+			The husband of the beautiful woman bought her roses and candy for her
+			birthday.
+		</Sentence>
+		<Question>
+			Did the woman buy roses?
+		</Question>
+		<Answer>
+			NO
+		</Answer>
+	</Item>
+
+	<Item>
+		<Sentence>
+			The patient who the doctor treated became better after only a few
+			treatments.
+		</Sentence>
+		<Question>
+
+		</Question>
+		<Answer>
+
+		</Answer>
+	</Item>
+
+	<Item>
+		<Sentence>
+			Maya played with the blocks and the balls, but she soon got bored with
+			them.
+		</Sentence>
+		<Question>
+			Did Maya play with the blocks?
+		</Question>
+		<Answer>
+			YES
+		</Answer>
+	</Item>
+
+	<Item>
+		<Sentence>
+			The therapist set up a meeting with the upset woman and her husband
+			yesterday.
+		</Sentence>
+		<Question>
+
+		</Question>
+		<Answer>
+
+		</Answer>
+	</Item>
+
+	<Item>
+		<Sentence>
+			The reporter had dinner yesterday with the baseball player who Kevin
+			admired.
+		</Sentence>
+		<Question>
+			Did the reporter have dinner with Kevin?
+		</Question>
+		<Answer>
+			NO
+		</Answer>
+	</Item>
+
+	<Item>
+		<Sentence>
+			The visitors at the zoo watched the zookeeper who the monkeys and apes
+			teased.
+		</Sentence>
+		<Question>
+
+		</Question>
+		<Answer>
+
+		</Answer>
+	</Item>
+
+	<Item>
+		<Sentence>
+			The mother of the prisoner sent him packages that contained cookies and
+			novels.
+		</Sentence>
+		<Question>
+			Did the mother send packages to the prisoner?
+		</Question>
+		<Answer>
+			YES
+		</Answer>
+	</Item>
+
+	<Item>
+		<Sentence>
+			The semester will start next week, but the students and teachers are not
+			ready.
+		</Sentence>
+		<Question>
+
+		</Question>
+		<Answer>
+
+		</Answer>
+	</Item>
+</Items>

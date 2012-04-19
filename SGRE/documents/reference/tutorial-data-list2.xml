@@ -1,0 +1,105 @@
+<items>
+    <item>
+        <sentence>
+            The husband of the beautiful woman bought her roses and candy for her
+            birthday.
+        </sentence>
+        <question>
+            Did the woman buy roses?
+        </question>
+        <answer>
+            NO
+        </answer>
+    </item>
+
+    <item>
+        <sentence>
+            The patient who the doctor treated became better after only a few
+            treatments.
+        </sentence>
+        <question>
+
+        </question>
+        <answer>
+
+        </answer>
+    </item>
+
+    <item>
+        <sentence>
+            Maya played with the blocks and the balls, but she soon got bored with
+            them.
+        </sentence>
+        <question>
+            Did Maya play with the blocks?
+        </question>
+        <answer>
+            YES
+        </answer>
+    </item>
+
+    <item>
+        <sentence>
+            The therapist set up a meeting with the upset woman and her husband
+            yesterday.
+        </sentence>
+        <question>
+
+        </question>
+        <answer>
+
+        </answer>
+    </item>
+
+    <item>
+        <sentence>
+            The reporter had dinner yesterday with the baseball player who Kevin
+            admired.
+        </sentence>
+        <question>
+            Did the reporter have dinner with Kevin?
+        </question>
+        <answer>
+            NO
+        </answer>
+    </item>
+
+    <item>
+        <sentence>
+            The visitors at the zoo watched the zookeeper who the monkeys and apes
+            teased.
+        </sentence>
+        <question>
+
+        </question>
+        <answer>
+
+        </answer>
+    </item>
+
+    <item>
+        <sentence>
+            The mother of the prisoner sent him packages that contained cookies and
+            novels.
+        </sentence>
+        <question>
+            Did the mother send packages to the prisoner?
+        </question>
+        <answer>
+            YES
+        </answer>
+    </item>
+
+    <item>
+        <sentence>
+            The semester will start next week, but the students and teachers are not
+            ready.
+        </sentence>
+        <question>
+
+        </question>
+        <answer>
+
+        </answer>
+    </item>
+</items>

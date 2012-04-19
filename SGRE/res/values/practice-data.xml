@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="practice_sentences">
+        <item>The husband of the beautiful woman bought her roses and candy for her birthday.</item>
+        <item>The reporter had dinner yesterday with the baseball player who Kevin admired.</item>
+        <item>The mother of the prisoner sent him packages that contained cookies and novels.</item>
+        <item>Maya played with the blocks and the balls, but she soon got bored with them.</item>
+        <item>The therapist set up a meeting with the upset woman and her husband yesterday.</item>
+        <item>The patient who the doctor treated became better after only a few treatments.</item>
+        <item>The visitors at the zoo watched the zookeeper who the monkeys and apes teased.</item>
+        <item>The semester will start next week, but the students and teachers are not ready.</item>
+    </string-array>
+    <string-array name="practice_questions">
+        <item>Did the woman buy roses?</item>
+        <item>Did the reporter have dinner with Kevin?</item>
+        <item>Did the mother send packages to the prisoner?</item>
+        <item>Did Maya play with the blocks?</item>
+    </string-array>
+
+    <integer-array name="practice_answers">
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+    </integer-array>
+    <integer-array name="practice_indices">
+        <item>0</item>
+        <item>4</item>
+        <item>6</item>
+        <item>2</item>
+        <item>3</item>
+        <item>1</item>
+        <item>5</item>
+        <item>7</item>
+    </integer-array>
+
+</resources>
