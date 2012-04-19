@@ -120,8 +120,8 @@ public class AdministratorActivity extends Activity {
 
 	protected void exportData() {
 		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE,
-				new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA, ExperimentData.KEY_DATA_SET }, null, null, null, null, null);
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA,ExperimentData.KEY_DATA_SET }, null,
+				null, null, null, null);
 		if (!c.moveToFirst()) {
 			// nothing to write out.
 			return;
@@ -134,10 +134,7 @@ public class AdministratorActivity extends Activity {
 			path.mkdirs();
 			BufferedWriter out = new BufferedWriter(new FileWriter(file));
 			do {
-				out.write("\nSession ID, "
-						+ c.getString(c.getColumnIndex(ExperimentData.KEY_DATA_SET))
-						+ c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID))
-						+ "\n");
+				out.write(String.format("\n\nSession ID, %s%04d", c.getString(c.getColumnIndex(ExperimentData.KEY_DATA_SET)), c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID))) + "\n");
 				out.write(c.getString(c.getColumnIndex(ExperimentData.KEY_DATA)));
 			} while (c.moveToNext());
 			out.flush();

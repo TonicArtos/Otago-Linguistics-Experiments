@@ -92,7 +92,7 @@ public class ExperimentActivity extends Activity {
 		if (!c.moveToLast()) {
 			sessionId = 1;
 		} else {
-			sessionId = c.getLong(c.getColumnIndex(ExperimentData.KEY_ROWID));
+			sessionId = c.getLong(c.getColumnIndex(ExperimentData.KEY_ROWID)) + 1;
 		}
 		c.close();
 		db.close();

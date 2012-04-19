@@ -13,13 +13,13 @@ public class SentenceResult implements ExperimentActivity.Result {
 	public int condition1;
 	public int condition2;
 	protected Vector<Click> clicks = new Vector<Click>();
-	private String[] condition1Text = new String[] { "Filler", "Relative Clause", "Adverb", "Coordination" };
-	private String[] condition2Text = new String[] { "Filler", "High", "Low" };
+	private static final String[] condition1Text = new String[] { "Filler", "Relative Clause", "Adverb", "Coordination", "Tutorial" };
+	public static final String[] condition2Text = new String[] { "Filler", "High Attachment", "Low Attachment", "Comma", "No Comma", "Tutorial" };
 
 	@Override
 	public String toString() {
 		String s = "";
-		s += "Sentence ID, " + (sentenceIndex + 1) + "\n";
+		s += "\nSentence ID, " + (sentenceIndex + 1) + "\n";
 		;
 		// Normalise index and fetch matching strings
 		s += "Condition1," + condition1Text[(condition1 < 0 || condition1Text.length <= condition1) ? 0 : condition1] + "\n";

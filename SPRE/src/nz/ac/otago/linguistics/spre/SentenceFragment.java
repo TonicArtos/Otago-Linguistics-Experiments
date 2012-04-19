@@ -73,6 +73,8 @@ public class SentenceFragment extends Fragment {
 		if (mode == ExperimentActivity.MODE_PRACTICE) {
 			result.sentence = getResources().getStringArray(R.array.practice_sentences)[result.sentenceIndex];
 			questions = getResources().getIntArray(R.array.practice_questions);
+			result.condition1 = 4;
+			result.condition2 = 5;
 		} else if (mode == ExperimentActivity.MODE_EXPERIMENT1) {
 			result.sentence = getResources().getStringArray(R.array.list1_sentences)[result.sentenceIndex];
 			questions = getResources().getIntArray(R.array.list1_questions);
