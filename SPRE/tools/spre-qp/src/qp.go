@@ -125,9 +125,11 @@ var c1s map[string]int = map[string]int{
 	"Coordination":    3,
 }
 var c2s map[string]int = map[string]int{
-	"Filler": 0,
-	"High":   1,
-	"Low":    2,
+	"Filler":          0,
+	"High Attachment": 1,
+	"Low Attachment":  2,
+	"Comma":           3,
+	"No Comma":        4,
 }
 
 func main() {

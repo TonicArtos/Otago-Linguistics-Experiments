@@ -75,18 +75,19 @@ public class AdministratorActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
-		// We want to make sure the database is updated before we use it anywhere. 
+
+		// We want to make sure the database is updated before we use it
+		// anywhere.
 		DatabaseHelper db = new DatabaseHelper(this);
 		db.getWritableDatabase();
 		db.close();
-		
+
 		((Button) findViewById(R.id.button_run_experiment1)).setOnClickListener(runExperiment1ClickListener);
 		((Button) findViewById(R.id.button_run_experiment2)).setOnClickListener(runExperiment2ClickListener);
 		((Button) findViewById(R.id.button_export_data)).setOnClickListener(exportDataClickListener);
 		((Button) findViewById(R.id.button_clear_data)).setOnLongClickListener(clearDataLongClickListener);
 		updateRecordCountDisplay();
-		
+
 	}
 
 	private void updateRecordCountDisplay() {
@@ -119,8 +120,8 @@ public class AdministratorActivity extends Activity {
 
 	protected void exportData() {
 		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA }, null,
-				null, null, null, null);
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE,
+				new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA, ExperimentData.KEY_DATA_SET }, null, null, null, null, null);
 		if (!c.moveToFirst()) {
 			// nothing to write out.
 			return;
@@ -133,7 +134,10 @@ public class AdministratorActivity extends Activity {
 			path.mkdirs();
 			BufferedWriter out = new BufferedWriter(new FileWriter(file));
 			do {
-				out.write("\nSession ID, " + c.getString(c.getColumnIndex(ExperimentData.KEY_DATA_SET)) + c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID)) + "\n");
+				out.write("\nSession ID, "
+						+ c.getString(c.getColumnIndex(ExperimentData.KEY_DATA_SET))
+						+ c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID))
+						+ "\n");
 				out.write(c.getString(c.getColumnIndex(ExperimentData.KEY_DATA)));
 			} while (c.moveToNext());
 			out.flush();
