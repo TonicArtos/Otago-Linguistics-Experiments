@@ -1,6 +1,5 @@
-/gen
-/bin
-/.project
-/.classpath
-/.be/id-cache
+/SPRE/gen
+/SPRE/bin
+/SPRE/.project
+/SPRE/.classpath
 *~
