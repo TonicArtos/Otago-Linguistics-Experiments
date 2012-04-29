@@ -2,8 +2,15 @@
 /SPRE/bin
 /SPRE/.project
 /SPRE/.classpath
+/SPRE/.settings
 /SGRE/gen
 /SGRE/bin
 /SGRE/.project
 /SGRE/.classpath
+/SGRE/.settings
+/Latency Test/gen
+/Latency Test/bin
+/Latency Test/.project
+/Latency Test/.classpath
+/Latency Test/.settings
 *~
