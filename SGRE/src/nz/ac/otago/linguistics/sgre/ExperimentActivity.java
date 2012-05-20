@@ -1,5 +1,10 @@
 package nz.ac.otago.linguistics.sgre;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.StringWriter;
+import java.nio.ByteOrder;
 import java.util.Random;
 import java.util.Vector;
 
@@ -9,6 +14,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.JsonWriter;
 import android.view.View;
 
 /**
@@ -29,6 +35,7 @@ public class ExperimentActivity extends Activity {
 	 * @author Tonic Artos
 	 */
 	public interface Result {
+		public void toJSON(JsonWriter out) throws IOException;
 	}
 
 	/**
@@ -65,13 +72,14 @@ public class ExperimentActivity extends Activity {
 	}
 
 	/**
-	 * Called when the activity is first created. Uses intent to figure out which mode to run in.
+	 * Called when the activity is first created. Uses intent to figure out
+	 * which mode to run in.
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// setContentView(R.layout.landing_page);
-		
+
 		mode = getIntent().getIntExtra(KEY_MODE, MODE_EXPERIMENT1);
 
 		results = new Vector<ExperimentActivity.Result>();
@@ -176,13 +184,21 @@ public class ExperimentActivity extends Activity {
 		DatabaseHelper db = new DatabaseHelper(this);
 		ContentValues values = new ContentValues();
 
-		String s = "";
-		for (Result r : results) {
-			s += r.toString();
+		StringWriter jsonData = new StringWriter();
+		JsonWriter jWriter = new JsonWriter(jsonData);
+		try {
+			jWriter.beginArray();
+			for (Result r : results) {
+				r.toJSON(jWriter);
+			}
+			jWriter.endArray();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
-		values.put(ExperimentData.KEY_DATA_SET, (mode == MODE_EXPERIMENT1)? "a": "b");
-		values.put(ExperimentData.KEY_DATA, s);
+		values.put(ExperimentData.KEY_DATA_SET, (mode == MODE_EXPERIMENT1) ? "a" : "b");
+		values.put(ExperimentData.KEY_DATA, jsonData.toString());
 
 		db.getWritableDatabase().insert(ExperimentData.TABLE, null, values);
 		db.close();

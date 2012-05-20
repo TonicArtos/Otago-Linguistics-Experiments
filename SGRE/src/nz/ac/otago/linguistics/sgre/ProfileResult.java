@@ -1,5 +1,9 @@
 package nz.ac.otago.linguistics.sgre;
 
+import java.io.IOException;
+
+import android.util.JsonWriter;
+
 public class ProfileResult implements ExperimentActivity.Result {
 	protected boolean englishFirst;
 	protected boolean rightHanded;
@@ -14,5 +18,11 @@ public class ProfileResult implements ExperimentActivity.Result {
 		s += "Age, " + age + "\n";
 		s += "Gender, " + gender + "\n";
 		return s;
+	}
+
+	@Override
+	public void toJSON(JsonWriter out) throws IOException {
+		// TODO Auto-generated method stub
+		
 	}
 }

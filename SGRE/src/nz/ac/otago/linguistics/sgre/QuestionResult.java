@@ -1,5 +1,9 @@
 package nz.ac.otago.linguistics.sgre;
 
+import java.io.IOException;
+
+import android.util.JsonWriter;
+
 /**
  * A result for an answered question.
  * 
@@ -21,5 +25,11 @@ public class QuestionResult implements ExperimentActivity.Result {
 		s += "Question ID, " + (questionId + 1) + "\n";
 		s += "Response, " + responseTime + ", " + (correctAnswer ? "correct" : "incorrect") + ", " + (response == ANSWERED_YES ? "yes" : "no") + "\n";
 		return s;
+	}
+
+	@Override
+	public void toJSON(JsonWriter out) throws IOException {
+		// TODO Auto-generated method stub
+		
 	}
 }

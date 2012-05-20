@@ -3,34 +3,32 @@
  The design of the user interface is to simply separate the two parts of the experiment into completely
  separate frames. Simply switch between them when you want to display a sentence or a question.
 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sentence_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-    <RelativeLayout
-        android:id="@+id/sentence_frame"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
+    <nz.ac.otago.linguistics.sgre.HideAndSeekTextView
+        android:id="@+id/sentence_text"
+        style="@android:style/TextAppearance.Large"
+        android:typeface="monospace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:singleLine="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Stepping Sentence" />
 
-        <Button
-            android:id="@+id/adv_button"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="40dp" />
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/sentence_text" />
 
-        <nz.ac.otago.linguistics.spre.HideAndSeekTextView
-            android:id="@+id/sentence_text"
-            style="@android:style/TextAppearance.Large"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/adv_button"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="center"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="Stepping Sentence" />
-    </RelativeLayout>
-</FrameLayout>
+</RelativeLayout>
