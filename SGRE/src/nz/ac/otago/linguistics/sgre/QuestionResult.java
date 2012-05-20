@@ -29,7 +29,11 @@ public class QuestionResult implements ExperimentActivity.Result {
 
 	@Override
 	public void toJSON(JsonWriter out) throws IOException {
-		// TODO Auto-generated method stub
-		
+		out.beginObject();
+		out.name("question_id").value(questionId + 1);
+		out.name("response_time").value(responseTime);
+		out.name("user_answer").value((response == ANSWERED_YES ? "yes" : "no"));
+		out.name("was_correct").value((correctAnswer ? "correct" : "incorrect"));
+		out.endObject();
 	}
 }

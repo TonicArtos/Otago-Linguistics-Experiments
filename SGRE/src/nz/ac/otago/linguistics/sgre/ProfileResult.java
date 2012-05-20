@@ -22,7 +22,11 @@ public class ProfileResult implements ExperimentActivity.Result {
 
 	@Override
 	public void toJSON(JsonWriter out) throws IOException {
-		// TODO Auto-generated method stub
-		
+		out.beginObject();
+		out.name("english_first_language").value((englishFirst ? "yes" : "no"));
+		out.name("right_handed").value((rightHanded ? "yes" : "no"));
+		out.name("age").value(age);
+		out.name("gender").value(gender);
+		out.endObject();
 	}
 }
