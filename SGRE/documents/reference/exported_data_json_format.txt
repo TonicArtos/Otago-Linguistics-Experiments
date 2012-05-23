@@ -1,0 +1,16 @@
+Reference for the structure of the experiment data in JSON
+
+[ experiment... ]
+
+experiment = { "session_id": int, "data_set": string, "english_first_language": bool, "right_handed": bool, "gender": string, "rows": [ row...] }
+
+row = { "sentence_id": int, "sentence": string, "condition_1": string, "condition_2": string, "word_events": [ wordevent...], "char_events": [ charevent... ], "seek_events": [ seekevent... ], "question_result": questionresult }
+
+wordevent = { "word_index": int, "word_index_delta": int, "relative_position": int, "word": string, "event_time": int, ""time_since_last_event": int, "time_spent_on_word": int }
+
+charevent = { "char_index": int, "char_index_delta": int, "relative_position": int, "char": string, "event_time": int, ""time_since_last_event": int, "time_spent_on_char": int }
+
+seekevent = { "event_time": int, "event_time_delta": int, "x": int, "x_delta": int, "relative_position": int, "char_index": int, "char_index_delta": int, "character": string, "word_index": int, "word_index_delta": int, "word": string }
+
+questionresult = { "question_id": int, "response_time": int, "user_answer": string, "was_correct": string }
+
