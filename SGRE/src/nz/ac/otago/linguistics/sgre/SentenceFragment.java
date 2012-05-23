@@ -33,7 +33,7 @@ public class SentenceFragment extends Fragment {
 	private int mode;
 
 	private int[] questions;
-	private SeekBar seekBarView;
+	private FingerTracker fingerTracker;
 	private int seekBarMargin;
 	private int seekBarMax;
 	protected long baseSeekTime;
@@ -186,15 +186,15 @@ public class SentenceFragment extends Fragment {
 		sentenceView.setOnWordChangeListener(wordChangeListener);
 
 		// SeekBar
-		seekBarView = ((SeekBar) v.findViewById(R.id.seek_bar));
-		LayoutParams seekBarLayout = seekBarView.getLayoutParams();
+		fingerTracker = ((FingerTracker) v.findViewById(R.id.seek_bar));
+		LayoutParams seekBarLayout = fingerTracker.getLayoutParams();
 		seekBarMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics());
 		seekBarMax = sentenceView.getTextWidth() + 2 * seekBarMargin;
 		seekBarLayout.width = seekBarMax;
-		seekBarView.setLayoutParams(seekBarLayout);
-		seekBarView.setMax(seekBarMax);
+		fingerTracker.setLayoutParams(seekBarLayout);
+		fingerTracker.setMax(seekBarMax);
 
-		seekBarView.setOnSeekBarChangeListener(seekChangeListener);
+		fingerTracker.setOnSeekBarChangeListener(seekChangeListener);
 
 		baseSeekTime = System.currentTimeMillis();
 

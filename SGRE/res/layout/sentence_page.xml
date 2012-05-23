@@ -22,10 +22,11 @@
         android:singleLine="true"
         android:typeface="monospace" />
 
-    <SeekBar
+    <nz.ac.otago.linguistics.sgre.FingerTracker
         android:id="@+id/seek_bar"
+        android:thumb="@drawable/seek_thumb"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/sentence_text"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="40dp"

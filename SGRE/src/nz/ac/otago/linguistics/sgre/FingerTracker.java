@@ -6,6 +6,8 @@ import android.view.MotionEvent;
 import android.widget.SeekBar;
 
 public class FingerTracker extends SeekBar {
+	private boolean isGoodTouch;
+
 	public FingerTracker(Context context) {
 		super(context);
 	}
@@ -20,9 +22,33 @@ public class FingerTracker extends SeekBar {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		// Override normal touch behaviour so that the user can only interact if they are touching the thumb.
-		//get position.
+		// Override normal touch behaviour so that the user can only interact if
+		// they are touching the thumb.
+		// get position.
 		// If touch is nearby the progress marker, pass it through.
-		return super.onTouchEvent(event);
+		int thumbPixelPos = (int)  getProgress();
+
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+            	if ((event.getX() - 25) < thumbPixelPos && thumbPixelPos < (event.getX() + 25)) {
+            		isGoodTouch = true;
+            		return super.onTouchEvent(event);
+            	}
+            	break;
+            case MotionEvent.ACTION_MOVE:
+            	if (isGoodTouch) {
+            		return super.onTouchEvent(event);
+            	}
+            	break;
+            case MotionEvent.ACTION_UP:
+            	if (isGoodTouch) {
+            		isGoodTouch = false;
+            		return super.onTouchEvent(event);
+            	}
+            	break;
+            case MotionEvent.ACTION_CANCEL:
+        		return super.onTouchEvent(event);
+        }
+		return true;
 	}
 }
