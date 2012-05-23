@@ -1,12 +1,14 @@
 package nz.ac.otago.linguistics.sgre;
 
 import android.content.Context;
+import android.graphics.PorterDuff.Mode;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.SeekBar;
 
 public class FingerTracker extends SeekBar {
 	private boolean isGoodTouch;
+	private boolean filtered;
 
 	public FingerTracker(Context context) {
 		super(context);
@@ -37,6 +39,13 @@ public class FingerTracker extends SeekBar {
             	break;
             case MotionEvent.ACTION_MOVE:
             	if (isGoodTouch) {
+            		if (getProgress() == getMax()) {
+            			getProgressDrawable().setColorFilter(0xFF00FF00, Mode.MULTIPLY);
+            			filtered = true;
+            		} else if (filtered) {
+            			getProgressDrawable().setColorFilter(null);
+            			filtered = false;
+            		}
             		return super.onTouchEvent(event);
             	}
             	break;
