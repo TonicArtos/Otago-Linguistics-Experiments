@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-	private static final int DATABASE_VERSION = 2;
+	private static final int DATABASE_VERSION = 3;
 	private static final String DATABASE_NAME = "data";
 	private static final String TAG = "com.devnaos.shopitalist";
 
@@ -16,6 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+		db.execSQL("drop table if exists " + ExperimentData.TABLE);
 		db.execSQL(ExperimentData.TABLE_CREATE);
 	}
 
@@ -26,8 +27,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		while (currVersion < newVersion) {
 			Log.w(TAG, "Upgrading database from version " + currVersion + " to version " + (currVersion + 1));
 			switch (currVersion) {
-			case 1:
-				db.execSQL("ALTER TABLE ExperimentData ADD data_set text not null default 'a';");
+			case 2:
+				db.execSQL("drop table if exists " + ExperimentData.TABLE);
 				break;
 			default:
 				break;

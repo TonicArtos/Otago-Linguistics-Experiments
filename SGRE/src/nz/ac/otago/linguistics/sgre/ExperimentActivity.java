@@ -1,10 +1,7 @@
 package nz.ac.otago.linguistics.sgre;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.StringWriter;
-import java.nio.ByteOrder;
 import java.util.Random;
 import java.util.Vector;
 
@@ -30,15 +27,6 @@ public class ExperimentActivity extends Activity {
 	protected static final String KEY_MODE = "key_mode";
 
 	/**
-	 * A result that can save its data to a given database.
-	 * 
-	 * @author Tonic Artos
-	 */
-	public interface Result {
-		public void toJSON(JsonWriter out) throws IOException;
-	}
-
-	/**
 	 * Indices match up with sentences. A true value means the matching sentence
 	 * has been used.
 	 */
@@ -51,7 +39,7 @@ public class ExperimentActivity extends Activity {
 
 	protected Random rand;
 
-	private Vector<Result> results;
+	private Vector<SentenceResult> results;
 	private int sentencesSinceBreak;
 	private int totalNumSentences;
 
@@ -59,8 +47,10 @@ public class ExperimentActivity extends Activity {
 
 	private int practice_count;
 	private int mode;
+	private ProfileResult profile;
 
 	@Override
+	@SuppressWarnings("deprecation")
 	protected void onResume() {
 		super.onResume();
 		final View mainView = findViewById(android.R.id.content);
@@ -82,7 +72,7 @@ public class ExperimentActivity extends Activity {
 
 		mode = getIntent().getIntExtra(KEY_MODE, MODE_EXPERIMENT1);
 
-		results = new Vector<ExperimentActivity.Result>();
+		results = new Vector<SentenceResult>();
 
 		rand = new Random();
 		numUsedSentences = 0;
@@ -123,8 +113,20 @@ public class ExperimentActivity extends Activity {
 	 * 
 	 * @param result
 	 */
-	public void addResult(Result result) {
+	public void addSentenceResult(SentenceResult result) {
 		results.add(result);
+	}
+	
+	public void addQuestionResult(QuestionResult result) {
+		results.lastElement().addQuestionResult(result);
+	}
+
+	/**
+	 * Add the gathered profile of the experimentee.
+	 * @param result
+	 */
+	public void addProfileResult(ProfileResult result) {
+		profile = result;
 	}
 
 	/**
@@ -140,7 +142,6 @@ public class ExperimentActivity extends Activity {
 			ft.replace(android.R.id.content, PauseFragment.newInstance(this, PauseFragment.MODE_EXIT, 0));
 			ft.setTransition(FragmentTransaction.TRANSIT_NONE);
 			ft.commit();
-			return;
 		}
 
 		// Give the user a break every 12 (BREAK_PERIOD) sentences.
@@ -185,21 +186,24 @@ public class ExperimentActivity extends Activity {
 		ContentValues values = new ContentValues();
 
 		StringWriter jsonData = new StringWriter();
-		JsonWriter jWriter = new JsonWriter(jsonData);
+		JsonWriter w = new JsonWriter(jsonData);
 		try {
-			jWriter.beginArray();
-			for (Result r : results) {
-				r.toJSON(jWriter);
+			w.beginObject();
+			profile.toJSON(w);
+			w.name("rows").beginArray();
+			for (JSONData r : results) {
+				r.toJSON(w);
 			}
-			jWriter.endArray();
+			w.endArray();
+			w.endObject();
+			w.flush();
+			values.put(ExperimentData.KEY_DATA, jsonData.toString());
+			w.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		values.put(ExperimentData.KEY_DATA_SET, (mode == MODE_EXPERIMENT1) ? "a" : "b");
-		values.put(ExperimentData.KEY_DATA, jsonData.toString());
-
+		
 		db.getWritableDatabase().insert(ExperimentData.TABLE, null, values);
 		db.close();
 	}

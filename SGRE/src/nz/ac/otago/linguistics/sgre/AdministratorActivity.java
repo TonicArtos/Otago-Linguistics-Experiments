@@ -120,43 +120,48 @@ public class AdministratorActivity extends Activity {
 
 	protected void exportData() {
 		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA,ExperimentData.KEY_DATA_SET }, null,
-				null, null, null, null);
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA }, null, null, null, null, null);
 		if (!c.moveToFirst()) {
 			// nothing to write out.
 			return;
 		}
-		File path = Environment.getExternalStoragePublicDirectory("SPRE");
-		File file = new File(path, "experimentdata.csv");
+		
+		File path = Environment.getExternalStoragePublicDirectory("SGRE");
+		File file = new File(path, "experimentdata.json");
 		// file.setReadable(true, false);
 
 		try {
 			path.mkdirs();
 			BufferedWriter out = new BufferedWriter(new FileWriter(file));
+
+			out.write("[");
 			do {
-				out.write(String.format("\n\nSession ID, %s%04d", c.getString(c.getColumnIndex(ExperimentData.KEY_DATA_SET)), c.getInt(c.getColumnIndex(ExperimentData.KEY_ROWID))) + "\n");
 				out.write(c.getString(c.getColumnIndex(ExperimentData.KEY_DATA)));
+				if (!c.isLast()) {
+					out.write(",");
+				}
 			} while (c.moveToNext());
+			out.write("]\n");
 			out.flush();
 			out.close();
 		} catch (IOException e) {
 			Log.w("ExternalStorage", "Error writing " + file, e);
 			Toast.makeText(this, "An error was encountered", Toast.LENGTH_LONG).show();
 		}
-		MediaScannerConnection.scanFile(getApplicationContext(), new String[] { file.getAbsolutePath() }, null,
-				new MediaScannerConnection.OnScanCompletedListener() {
+		
+		MediaScannerConnection.scanFile(getApplicationContext(), new String[] { file.getAbsolutePath() }, null, new MediaScannerConnection.OnScanCompletedListener() {
+			@Override
+			public void onScanCompleted(final String path, final Uri uri) {
+				runOnUiThread(new Runnable() {
 					@Override
-					public void onScanCompleted(final String path, final Uri uri) {
-						runOnUiThread(new Runnable() {
-							@Override
-							public void run() {
-								// Toast.makeText(getApplicationContext(), path
-								// + " " + uri, Toast.LENGTH_LONG).show();
-								Toast.makeText(getApplicationContext(), "Data exported to SPRE/experimentdata.csv", Toast.LENGTH_LONG).show();
-							}
-						});
+					public void run() {
+						// Toast.makeText(getApplicationContext(), path
+						// + " " + uri, Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), "Data exported to SPRE/experimentdata.csv", Toast.LENGTH_LONG).show();
 					}
 				});
+			}
+		});
 		c.close();
 		db.close();
 

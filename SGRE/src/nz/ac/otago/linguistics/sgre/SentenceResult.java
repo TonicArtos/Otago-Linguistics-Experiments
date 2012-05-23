@@ -1,10 +1,6 @@
 package nz.ac.otago.linguistics.sgre;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.util.Iterator;
 import java.util.Vector;
 
 import android.util.JsonWriter;
@@ -14,43 +10,55 @@ import android.util.JsonWriter;
  * 
  * @author Tonic Artos
  */
-public class SentenceResult implements ExperimentActivity.Result {
-	protected String sentence;
-	protected int sentenceIndex;
+public class SentenceResult implements JSONData {
+	public int sentenceId;
+	public String sentence;
 	public int condition1;
 	public int condition2;
-	protected Vector<SeekEvent> seekEvents = new Vector<SeekEvent>();
-	protected Vector<WordEvent> wordEvents = new Vector<WordEvent>();
-	protected Vector<CharEvent> charEvents = new Vector<CharEvent>();
+	public Vector<SeekEvent> seekEvents = new Vector<SeekEvent>();
+	public Vector<WordEvent> wordEvents = new Vector<WordEvent>();
+	public Vector<CharEvent> charEvents = new Vector<CharEvent>();
+	
+	private QuestionResult questionResult;
 	private static final String[] condition1Text = new String[] { "Filler", "Relative Clause", "Adverb", "Coordination", "Tutorial" };
-	public static final String[] condition2Text = new String[] { "Filler", "High Attachment", "Low Attachment", "Comma", "No Comma", "Tutorial" };
+	private static final String[] condition2Text = new String[] { "Filler", "High Attachment", "Low Attachment", "Comma", "No Comma", "Tutorial" };
 
 	@Override
-	public void toJSON(JsonWriter w) throws IOException {
-		w.beginObject();
-		w.name("sentence_id").value(sentenceIndex + 1);
-		w.name("condition_1").value(condition1Text[(condition1 < 0 || condition1Text.length <= condition1) ? 0 : condition1]);
-		w.name("condition_2").value(condition2Text[(condition2 < 0 || condition2Text.length <= condition2) ? 0 : condition2]);
-		w.name("word_indices").beginArray();
-		for (WordEvent word : wordEvents) {
-			w.value(word.word);
+	public void toJSON(JsonWriter out) throws IOException {
+		out.beginObject();
+		
+		out.name("sentence_id").value(sentenceId + 1);
+		out.name("sentence").value(sentence);
+		out.name("condition_1").value(condition1Text[(condition1 < 0 || condition1Text.length <= condition1) ? 0 : condition1]);
+		out.name("condition_2").value(condition2Text[(condition2 < 0 || condition2Text.length <= condition2) ? 0 : condition2]);
+		
+		out.name("word_events").beginArray();
+		for (WordEvent we : wordEvents) {
+			we.toJSON(out);
 		}
-		w.endArray();
-		w.name("words").beginArray();
-		for (WordEvent word : wordEvents) {
-			w.value(word.word);
+		out.endArray();
+		
+		out.name("char_events").beginArray();
+		for (CharEvent ce : charEvents) {
+			ce.toJSON(out);
 		}
-		w.endArray();
-		w.name("word_times").beginArray();
-		for (WordEvent word : wordEvents) {
-			w.value(word.word);
+		out.endArray();
+		
+		out.name("seek_events").beginArray();
+		for (SeekEvent se : seekEvents) {
+			se.toJSON(out);
 		}
-		w.endArray();
-		w.name("word_times").beginArray();
-		for (WordEvent word : wordEvents) {
-			w.value(word.word);
+		out.endArray();
+		
+		if (questionResult != null) {
+			out.name("question_result");
+			questionResult.toJSON(out);
 		}
-		w.endArray();
-		w.endObject();
+		
+		out.endObject();
+	}
+
+	public void addQuestionResult(QuestionResult result) {
+		questionResult = result;
 	}
 }

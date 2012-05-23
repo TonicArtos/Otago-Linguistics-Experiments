@@ -9,26 +9,26 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    
     <nz.ac.otago.linguistics.sgre.HideAndSeekTextView
         android:id="@+id/sentence_text"
         style="@android:style/TextAppearance.Large"
-        android:typeface="monospace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
-        android:singleLine="true"
         android:gravity="center_vertical|center_horizontal"
-        android:text="Stepping Sentence" />
+        android:singleLine="true"
+        android:typeface="monospace" />
 
     <SeekBar
         android:id="@+id/seek_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_below="@+id/sentence_text"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/sentence_text" />
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
 
 </RelativeLayout>

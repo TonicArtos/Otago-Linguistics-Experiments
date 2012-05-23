@@ -68,11 +68,13 @@ public class ProfileFragment extends Fragment {
 		}
 
 		result = new ProfileResult();
+		result.sessionId = main.sessionId;
+		result.dataSet = (mode == ExperimentActivity.MODE_EXPERIMENT1) ? "a" : "b";
 		result.englishFirst = engYes.isChecked();
 		result.rightHanded = rhYes.isChecked();
 		result.age = ((NumberPicker) getView().findViewById(R.id.input_age)).getCurrent();
 		result.gender = ((RadioButton) getView().findViewById(R.id.radio_gender_female)).isChecked() ? "Female" : "Male";
-		main.addResult(result);
+		main.addProfileResult(result);
 
 		return true;
 	}

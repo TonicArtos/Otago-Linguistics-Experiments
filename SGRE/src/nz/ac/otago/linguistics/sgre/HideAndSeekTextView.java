@@ -2,21 +2,11 @@ package nz.ac.otago.linguistics.sgre;
 
 import java.util.Vector;
 
-import nz.ac.otago.linguistics.sgre.HideAndSeekTextView.OnCharChangeListener;
-import nz.ac.otago.linguistics.sgre.HideAndSeekTextView.OnWordChangeListener;
-
 import android.content.Context;
 import android.graphics.Paint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.RelativeLayout;
-import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 /**
@@ -24,7 +14,6 @@ import android.widget.TextView;
  * displayed (exclusively so) in turn using the step method.
  * 
  * @author Tonic Artos
- * 
  */
 public class HideAndSeekTextView extends TextView {
 	private int currword;
@@ -41,7 +30,7 @@ public class HideAndSeekTextView extends TextView {
 	private BufferType buffType;
 	private float sentenceRightXPos;
 	private float sentenceLeftXPos;
-	private RelativeLayout parentLayout;
+	private String sentence;
 
 	public HideAndSeekTextView(Context context) {
 		super(context);
@@ -63,6 +52,7 @@ public class HideAndSeekTextView extends TextView {
 	 */
 	@Override
 	public void setText(CharSequence text, BufferType type) {
+		sentence = (String) text;
 		buffType = type;
 		currword = -1;
 		words = new Vector<String>();
@@ -109,9 +99,13 @@ public class HideAndSeekTextView extends TextView {
 	public void giveFingerPosition(int x) {
 		// Find the word the finger is pointing to. Note that the space after
 		// the word is included in this case.
-		if (x > sentenceRightXPos || x < sentenceLeftXPos) {
+		if (x < sentenceLeftXPos || sentenceRightXPos < x) {
 			currword = -1;
 			currchar = -1;
+			long t = System.currentTimeMillis();
+			// Notify a word
+			onWordChangeListener.OnWordChange(currword, "", t, t - lastTimeWordChanged, (x < sentenceLeftXPos) ? SeekEvent.ANTE_SENTENTIUM : SeekEvent.POST_SENTENTIUM);
+			lastTimeWordChanged = t;
 		} else {
 			for (int i = 0; i < wordPositions.length; i++) {
 				// Looking through word positions from left to right.
@@ -121,20 +115,19 @@ public class HideAndSeekTextView extends TextView {
 					if (currword != newCurrword) {
 						long t = System.currentTimeMillis();
 						currword = newCurrword;
-						onWordChangeListener.OnWordChange(currword, getWord(), t, t - lastTimeWordChanged);
+						onWordChangeListener.OnWordChange(currword, getWord(), t, t - lastTimeWordChanged, SeekEvent.IN_SENTENTIUM);
 						lastTimeWordChanged = t;
 					}
 					break;
 				}
 			}
-			for (int i = 0; i < charPositions.length; i++) {
-				if (x < charPositions[i]) {
-					currchar = i;
-					int newCurrchar = (i - 1) / 2;
+			for (int i = charPositions.length - 1; i >= 0; i--) {
+				if (x > charPositions[i]) {
+					int newCurrchar = i;
 					if (currchar != newCurrchar) {
 						long t = System.currentTimeMillis();
 						currchar = newCurrchar;
-						onWordChangeListener.OnWordChange(currchar, getChar(), t, t - lastTimeCharChanged);
+						onCharChangeListener.OnCharChange(currchar, getChar(), t, t - lastTimeCharChanged, SeekEvent.IN_SENTENTIUM);
 						lastTimeCharChanged = t;
 					}
 					break;
@@ -142,25 +135,6 @@ public class HideAndSeekTextView extends TextView {
 			}
 		}
 		super.setText(getMangledSentence(), buffType);
-	}
-
-	/**
-	 * Step through each word of the sentence. Loops to the beginning if all
-	 * words has been stepped through.
-	 * 
-	 * @return true if stepping has finished entire sequence of words.
-	 *         Otherwise, false.
-	 */
-	public boolean step() {
-		boolean isFinished = false;
-		currword += 1;
-		if (currword == words.size()) {
-			currword = -1;
-			isFinished = true;
-		}
-		// update representation
-		super.setText(getMangledSentence(), buffType);
-		return isFinished;
 	}
 
 	/**
@@ -196,7 +170,7 @@ public class HideAndSeekTextView extends TextView {
 
 	public String getChar() {
 		if (currchar >= 0) {
-			return ((String) getText()).substring(currchar, currchar + 1);
+			return sentence.substring(currchar, currchar + 1);
 		}
 		return "";
 	}
@@ -228,8 +202,6 @@ public class HideAndSeekTextView extends TextView {
 		switch (getGravity() & Gravity.HORIZONTAL_GRAVITY_MASK) {
 		case Gravity.CENTER_HORIZONTAL:
 			// Adjust coord from the view's center.
-			float measureText = p.measureText((String) text);
-			int width = getWidth();
 			coord += getWidth() / 2 - p.measureText((String) text) / 2;
 			break;
 
@@ -327,10 +299,6 @@ public class HideAndSeekTextView extends TextView {
 		return positions;
 	}
 
-	public void addParentLayout(View v) {
-		parentLayout = (RelativeLayout) v;
-	}
-
 	public void setOnWordChangeListener(OnWordChangeListener listener) {
 		onWordChangeListener = listener;
 	}
@@ -339,11 +307,21 @@ public class HideAndSeekTextView extends TextView {
 		onCharChangeListener = listener;
 	}
 
+	/**
+	 * A listener that gets notified when a new word is revealed.
+	 * 
+	 * @author Tonic Artos
+	 */
 	public interface OnWordChangeListener {
-		public void OnWordChange(int wordIndex, String word, long eventTime, long timeSinceLastWordChange);
+		public void OnWordChange(int wordIndex, String word, long eventTime, long timeSinceLastWordChange, int relativePosition);
 	}
 
+	/**
+	 * A listener that gets notified when a new character gets revealed.
+	 * 
+	 * @author Tonic Artos
+	 */
 	public interface OnCharChangeListener {
-		public void OnCharChange(int charIndex, String character, long eventTime, long timeSinceLastCharChange);
+		public void OnCharChange(int charIndex, String character, long eventTime, long timeSinceLastCharChange, int relativePosition);
 	}
 }

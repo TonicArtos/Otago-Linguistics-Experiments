@@ -98,7 +98,7 @@ public class QuestionFragment extends Fragment {
 		result.response = response;
 		result.correctAnswer = response == answer;
 		result.responseTime = System.currentTimeMillis() - timestamp;
-		main.addResult(result);
+		main.addQuestionResult(result);
 
 		// Show the question response panel.
 		Fragment qr = QuestionResponseFragment.newInstance(main, result.correctAnswer, mode);
