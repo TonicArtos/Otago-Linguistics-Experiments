@@ -38,7 +38,7 @@
     <string name="radio_no">No</string>
     <string name="text_complain_incomplete_info">Please complete the information.</string>
     
-    <string name="admin_introduction">Self Paced Reading Experiment</string>
+    <string name="admin_introduction">Self Guided Reading Experiment</string>
     <string name="experiment_run_explantion">When an experiment is run the data will not be permanently saved until the entire experiment is complete.</string>
     <string name="label_run_experiment1">Begin Experiment A</string>
     <string name="label_run_experiment2">Begin Experiment B</string>

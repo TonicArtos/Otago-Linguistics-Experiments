@@ -214,7 +214,10 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g3982">
+       id="g3982"
+       inkscape:export-filename="/home/tonic/Projects/Work/Android/Experiments/SGRE/images/seek_thumb_normal.png"
+       inkscape:export-xdpi="23.357569"
+       inkscape:export-ydpi="23.357569">
       <path
          transform="matrix(1.0035131,0,0,0.97972335,-1.309973,7.0818832)"
          id="path3830"
@@ -236,7 +239,10 @@
          sodipodi:nodetypes="sssssss" />
     </g>
     <g
-       id="g3987">
+       id="g3987"
+       inkscape:export-filename="/home/tonic/Projects/Work/Android/Experiments/SGRE/images/seek_thumb_selected.png"
+       inkscape:export-xdpi="23.357561"
+       inkscape:export-ydpi="23.357561">
       <path
          transform="matrix(1.0035131,0,0,0.97972335,224.18983,8.596339)"
          id="path3830-2"
@@ -258,7 +264,10 @@
          sodipodi:nodetypes="sssssss" />
     </g>
     <g
-       id="g3992">
+       id="g3992"
+       inkscape:export-filename="/home/tonic/Projects/Work/Android/Experiments/SGRE/images/seek_thumb_pressed.png"
+       inkscape:export-xdpi="23.357569"
+       inkscape:export-ydpi="23.357569">
       <path
          transform="matrix(1.0035131,0,0,0.97972335,114.2198,244.81164)"
          id="path3830-2-3"
