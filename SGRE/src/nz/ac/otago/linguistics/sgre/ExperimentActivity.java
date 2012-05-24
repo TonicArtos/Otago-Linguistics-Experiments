@@ -142,6 +142,7 @@ public class ExperimentActivity extends Activity {
 			ft.replace(android.R.id.content, PauseFragment.newInstance(this, PauseFragment.MODE_EXIT, 0));
 			ft.setTransition(FragmentTransaction.TRANSIT_NONE);
 			ft.commit();
+			return;
 		}
 
 		// Give the user a break every 12 (BREAK_PERIOD) sentences.
