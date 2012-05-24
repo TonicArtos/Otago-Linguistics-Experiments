@@ -29,6 +29,7 @@
         android:layout_height="50dp"
         android:layout_below="@+id/sentence_text"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp" />
 
