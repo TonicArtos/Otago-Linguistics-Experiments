@@ -1,7 +1,9 @@
 package nz.ac.otago.linguistics.sgre;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.util.Random;
 import java.util.Vector;
 
@@ -185,10 +187,11 @@ public class ExperimentActivity extends Activity {
 	private void storeResults() {
 		DatabaseHelper db = new DatabaseHelper(this);
 		ContentValues values = new ContentValues();
-
-		StringWriter jsonData = new StringWriter();
-		JsonWriter w = new JsonWriter(jsonData);
+		String filename = String.valueOf(System.currentTimeMillis());
 		try {
+			FileOutputStream file = openFileOutput(filename, MODE_WORLD_READABLE);
+			FileWriter jsonFile = new FileWriter(file.getFD());
+			JsonWriter w = new JsonWriter(jsonFile);
 			w.beginObject();
 			profile.toJSON(w);
 			w.name("rows").beginArray();
@@ -198,10 +201,11 @@ public class ExperimentActivity extends Activity {
 			w.endArray();
 			w.endObject();
 			w.flush();
-			values.put(ExperimentData.KEY_DATA, jsonData.toString());
+			values.put(ExperimentData.KEY_DATA_LOCATION, filename);
 			w.close();
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

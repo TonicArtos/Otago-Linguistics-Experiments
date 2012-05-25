@@ -18,6 +18,7 @@ import android.widget.TextView;
 public class HideAndSeekTextView extends TextView {
 	private int currword;
 	private float[] wordPositions;
+	private int[] wordWidths;
 	private long lastTimeWordChanged;
 	private OnWordChangeListener onWordChangeListener;
 	private Vector<String> words;
@@ -74,6 +75,7 @@ public class HideAndSeekTextView extends TextView {
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 		super.onLayout(changed, left, top, right, bottom);
 		wordPositions = getWordPositions(getTextLeftXCoord(getX()));
+		wordWidths = getWordWidths();
 		charPositions = getCharPositions(getTextLeftXCoord(getX()));
 		sentenceRightXPos = getTextLeftXCoord(getX()) + getPaint().measureText((String) getText());
 		sentenceLeftXPos = getTextLeftXCoord(getX());
@@ -87,6 +89,14 @@ public class HideAndSeekTextView extends TextView {
 		// seekBar.setLayoutParams(sbvLayoutParams);
 		// seekBar.setMax(width);
 		// parentLayout.addView(seekBar);
+	}
+
+	public float[] getWordPositions() {
+		return wordPositions;
+	}
+
+	public float[] getCharPositions() {
+		return charPositions;
 	}
 
 	/**
@@ -104,7 +114,7 @@ public class HideAndSeekTextView extends TextView {
 			currchar = -1;
 			long t = System.currentTimeMillis();
 			// Notify a word
-			onWordChangeListener.OnWordChange(currword, "", t, t - lastTimeWordChanged, (x < sentenceLeftXPos) ? SeekEvent.ANTE_SENTENTIUM : SeekEvent.POST_SENTENTIUM);
+			onWordChangeListener.OnWordChange(currword, "", t, t - lastTimeWordChanged, (x < sentenceLeftXPos) ? SeekEvent.ANTE_SENTENTIUM : SeekEvent.POST_SENTENTIUM, 0);
 			lastTimeWordChanged = t;
 		} else {
 			for (int i = 0; i < wordPositions.length; i++) {
@@ -115,7 +125,7 @@ public class HideAndSeekTextView extends TextView {
 					if (currword != newCurrword) {
 						long t = System.currentTimeMillis();
 						currword = newCurrword;
-						onWordChangeListener.OnWordChange(currword, getWord(), t, t - lastTimeWordChanged, SeekEvent.IN_SENTENTIUM);
+						onWordChangeListener.OnWordChange(currword, getWord(), t, t - lastTimeWordChanged, SeekEvent.IN_SENTENTIUM, wordWidths[i/2]);
 						lastTimeWordChanged = t;
 					}
 					break;
@@ -298,6 +308,17 @@ public class HideAndSeekTextView extends TextView {
 		}
 		return positions;
 	}
+	
+	public int[] getWordWidths() {
+		final CharSequence text = getText();
+		final Paint p = getPaint();
+		final String[] words = TextUtils.split((String) text, " ");
+		final int[] widths = new int[words.length];
+		for (int i = 0; i < words.length; i++) {
+			widths[i] = (int) p.measureText(words[i]);
+		}
+		return widths;
+	}
 
 	public void setOnWordChangeListener(OnWordChangeListener listener) {
 		onWordChangeListener = listener;
@@ -313,7 +334,7 @@ public class HideAndSeekTextView extends TextView {
 	 * @author Tonic Artos
 	 */
 	public interface OnWordChangeListener {
-		public void OnWordChange(int wordIndex, String word, long eventTime, long timeSinceLastWordChange, int relativePosition);
+		public void OnWordChange(int wordIndex, String word, long eventTime, long timeSinceLastWordChange, int relativePosition, int pxWidth);
 	}
 
 	/**

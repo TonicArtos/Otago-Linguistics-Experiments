@@ -52,11 +52,11 @@ public class SeekEvent implements JSONData {
 		out.name("x_delta").value(xDelta);
 		out.name("relative_position").value(relativePosition);
 		
-		out.name("char_index").value(charIndex);
+		out.name("char_index").value(charIndex + 1);
 		out.name("char_index_delta").value(charIndexDelta);
 		out.name("character").value(character);
 		
-		out.name("word_index").value(wordIndex);
+		out.name("word_index").value(wordIndex + 1);
 		out.name("word_index_delta").value(wordIndexDelta);
 		out.name("word").value(word);
 		out.endObject();

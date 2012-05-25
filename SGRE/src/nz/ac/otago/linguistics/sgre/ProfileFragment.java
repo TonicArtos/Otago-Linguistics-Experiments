@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -51,6 +52,12 @@ public class ProfileFragment extends Fragment {
 		((TextView) v.findViewById(R.id.text_subject_id)).setText("ID: "
 				+ String.format("%s%04d", (mode == ExperimentActivity.MODE_EXPERIMENT1) ? "a" : "b", main.sessionId));
 		((Button) v.findViewById(R.id.button_continue)).setOnClickListener(onContinueClickListener);
+		v.findViewById(R.id.text_subject_id).setFocusableInTouchMode(true);
+		v.findViewById(R.id.text_subject_id).requestFocusFromTouch();
+		((NumberPicker) v.findViewById(R.id.input_age)).setSpeed(80);
+		
+		getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+		
 		return v;
 	}
 

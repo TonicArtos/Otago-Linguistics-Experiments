@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-	private static final int DATABASE_VERSION = 4;
+	private static final int DATABASE_VERSION = 5;
 	private static final String DATABASE_NAME = "data";
-	private static final String TAG = "com.devnaos.shopitalist";
+	private static final String TAG = "nz.ac.otago.linguistics.sgre.DatabaseHelper";
 
 	public DatabaseHelper(Context ctx) {
 		super(ctx, DATABASE_NAME, null, DATABASE_VERSION);

@@ -152,6 +152,12 @@ public class NumberPicker extends LinearLayout implements OnClickListener,
         mCurrent = 	a.getInt( R.styleable.numberpicker_defaultValue, DEFAULT_VALUE );
         mCurrent = Math.max( mStart, Math.min( mCurrent, mEnd ) );
         mText.setText( "" + mCurrent );
+        mText.setSelectAllOnFocus(true);
+//        mText.setFocusable(false);
+    }
+    
+    public EditText getEditText() {
+    	return mText;
     }
 
     @Override
@@ -338,7 +344,7 @@ public class NumberPicker extends LinearLayout implements OnClickListener,
          * trigger the on focus changed and any typed values to be pulled.
          */
         mText.clearFocus();
-        mText.requestFocus();
+//        mText.requestFocus();
         if (R.id.increment == v.getId()) {
             mIncrement = true;
             mHandler.post(mRunnable);

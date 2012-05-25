@@ -30,14 +30,17 @@ public class WordEvent implements JSONData {
 	public int wordIndex;
 	public int wordIndexDelta;
 	public String word;
+	public int pxWidth;
 	
 	@Override
 	public void toJSON(JsonWriter out) throws IOException {
 		out.beginObject();
-		out.name("word_index").value(wordIndex);
+		out.name("word_index").value(wordIndex + 1);
 		out.name("word_index_delta").value(wordIndexDelta);
 		out.name("relative_position").value(relativePosition);
 		out.name("word").value(word);
+		out.name("chars_in_word").value(word.length());
+		out.name("pixels_in_word").value(pxWidth);
 		out.name("event_time").value(time);
 		out.name("time_since_last_event").value(tDelta);
 		out.name("time_spent_on_word").value(timeSpent);

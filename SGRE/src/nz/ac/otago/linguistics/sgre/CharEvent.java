@@ -34,7 +34,7 @@ public class CharEvent implements JSONData {
 	@Override
 	public void toJSON(JsonWriter out) throws IOException {
 		out.beginObject();
-		out.name("char_index").value(charIndex);
+		out.name("char_index").value(charIndex + 1);
 		out.name("char_index_delta").value(charIndexDelta);
 		out.name("relative_position").value(relativePosition);
 		out.name("character").value(character);

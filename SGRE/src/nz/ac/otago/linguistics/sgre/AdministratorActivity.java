@@ -1,8 +1,8 @@
 package nz.ac.otago.linguistics.sgre;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import android.app.Activity;
@@ -27,6 +27,7 @@ import android.widget.Toast;
  * @author Tonic Artos
  */
 public class AdministratorActivity extends Activity {
+	private static final int NUM_BYTES = 1024;
 	private View.OnClickListener runExperiment1ClickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
@@ -105,6 +106,14 @@ public class AdministratorActivity extends Activity {
 
 	protected void clearData() {
 		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA_LOCATION }, null, null, null, null, null);
+		if (!c.moveToFirst()) {
+			return; // Nothing to do.
+		}
+		do {
+			String filename = c.getString(c.getColumnIndex(ExperimentData.KEY_DATA_LOCATION));
+			deleteFile(filename);
+		} while (c.moveToNext());
 		int nr = 0;
 		try {
 			nr = db.clearData();
@@ -119,33 +128,45 @@ public class AdministratorActivity extends Activity {
 	}
 
 	protected void exportData() {
-		DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA }, null, null, null, null, null);
+		DatabaseHelper db = new DatabaseHelper(this);
+		Cursor c = db.getReadableDatabase().query(ExperimentData.TABLE, new String[] { ExperimentData.KEY_ROWID, ExperimentData.KEY_DATA_LOCATION }, null, null, null, null, null);
 		if (!c.moveToFirst()) {
-			// nothing to write out.
-			return;
+			return; // Nothing to do.
 		}
-		
+
 		File path = Environment.getExternalStoragePublicDirectory("SGRE");
-		File file = new File(path, "experimentdata.json");
+		final File file = new File(path, "experimentdata.json");
 		// file.setReadable(true, false);
-
+		
 		try {
+			// Setup output file path.
 			path.mkdirs();
-			BufferedWriter out = new BufferedWriter(new FileWriter(file));
-
-			out.write("[");
-			do {
-				out.write(c.getString(c.getColumnIndex(ExperimentData.KEY_DATA)));
-				if (!c.isLast()) {
-					out.write(",");
+			FileOutputStream fileOut = new FileOutputStream(file);
+			
+			fileOut.write("[".getBytes());
+			do { // For each row, read data from private file and join in JSON array to file.
+				String filename = c.getString(c.getColumnIndex(ExperimentData.KEY_DATA_LOCATION));
+				FileInputStream dataFile = openFileInput(filename);
+				byte[] buffer = new byte[1024];
+				int nbr;
+				
+				nbr = dataFile.read(buffer, 0, NUM_BYTES);
+				while (nbr != -1) { //  Write bytes until none read (nbr == -1).
+					fileOut.write(buffer, 0, nbr);
+					nbr = dataFile.read(buffer, 0, NUM_BYTES);
+				}
+				dataFile.close();
+				
+				if (!c.isLast()) { // Comma separate records for JSON array.
+					fileOut.write(",".getBytes());
 				}
 			} while (c.moveToNext());
-			out.write("]\n");
-			out.flush();
-			out.close();
+			
+			// End JSON array and finish writing to disk.
+			fileOut.write("]\n".getBytes());
+			fileOut.close();
 		} catch (IOException e) {
-			Log.w("ExternalStorage", "Error writing " + file, e);
+			Log.w("ExternalStorage", "Error exporting results.", e);
 			Toast.makeText(this, "An error was encountered", Toast.LENGTH_LONG).show();
 		}
 		
@@ -157,7 +178,7 @@ public class AdministratorActivity extends Activity {
 					public void run() {
 						// Toast.makeText(getApplicationContext(), path
 						// + " " + uri, Toast.LENGTH_LONG).show();
-						Toast.makeText(getApplicationContext(), "Data exported to SPRE/experimentdata.csv", Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), "Data exported to " + file.getPath(), Toast.LENGTH_LONG).show();
 					}
 				});
 			}

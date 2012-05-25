@@ -40,7 +40,7 @@ public class SentenceFragment extends Fragment {
 
 	private HideAndSeekTextView.OnWordChangeListener wordChangeListener = new HideAndSeekTextView.OnWordChangeListener() {
 		@Override
-		public void OnWordChange(int wordIndex, String word, long eventTime, long timeSinceLastChange, int relativePosition) {
+		public void OnWordChange(int wordIndex, String word, long eventTime, long timeSinceLastChange, int relativePosition, int pxWidth) {
 			// Filter out spurious changes from events outside of the sentence.
 			// Only want one of these each time we move outside of the sentence,
 			// starting or moving to.
@@ -50,12 +50,13 @@ public class SentenceFragment extends Fragment {
 
 			// Build an event and log it.
 			WordEvent e = new WordEvent();
-			e.wordIndex = wordIndex + 1;
+			e.wordIndex = wordIndex;
 			if (result.wordEvents.size() > 0) {
 				e.wordIndexDelta = wordIndex - result.wordEvents.lastElement().wordIndex;
 				result.wordEvents.lastElement().timeSpent = timeSinceLastChange;
 			}
 			e.word = word;
+			e.pxWidth = pxWidth;
 			e.time = eventTime;
 			e.tDelta = timeSinceLastChange;
 			e.relativePosition = relativePosition;
@@ -75,7 +76,7 @@ public class SentenceFragment extends Fragment {
 
 			// Build an event and log it.
 			CharEvent e = new CharEvent();
-			e.charIndex = charIndex + 1;
+			e.charIndex = charIndex;
 			if (result.charEvents.size() > 0) {
 				e.charIndexDelta = charIndex - result.charEvents.lastElement().charIndex;
 				result.charEvents.lastElement().timeSpent = timeSinceLastChange;
@@ -115,8 +116,8 @@ public class SentenceFragment extends Fragment {
 			e.x = fingerXPos;
 			e.word = sentenceView.getWord();
 			e.character = sentenceView.getChar();
-			e.wordIndex = sentenceView.getWordIndex() + 1;
-			e.charIndex = sentenceView.getCharIndex() + 1;
+			e.wordIndex = sentenceView.getWordIndex();
+			e.charIndex = sentenceView.getCharIndex();
 			if (result.seekEvents.size() > 0) {
 				e.xDelta = e.x - result.seekEvents.lastElement().x;
 				e.wordIndexDelta = e.wordIndex - result.seekEvents.lastElement().wordIndex;
@@ -197,6 +198,7 @@ public class SentenceFragment extends Fragment {
 		fingerTracker.setOnSeekBarChangeListener(seekChangeListener);
 
 		baseSeekTime = System.currentTimeMillis();
+		fingerTracker.setProgress(10);
 
 		return v;
 	}
