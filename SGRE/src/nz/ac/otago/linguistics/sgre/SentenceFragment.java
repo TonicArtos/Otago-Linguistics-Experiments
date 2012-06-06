@@ -44,23 +44,23 @@ public class SentenceFragment extends Fragment {
 			// Filter out spurious changes from events outside of the sentence.
 			// Only want one of these each time we move outside of the sentence,
 			// starting or moving to.
-			if (wordIndex == -1 && result.wordEvents.size() > 0 && result.wordEvents.lastElement().wordIndex == -1) {
+			if (wordIndex == -1 && result.getNumWordEvents() > 0 && result.getLastWordEvent().wordIndex == -1) {
 				return;
 			}
 
 			// Build an event and log it.
 			WordEvent e = new WordEvent();
 			e.wordIndex = wordIndex;
-			if (result.wordEvents.size() > 0) {
-				e.wordIndexDelta = wordIndex - result.wordEvents.lastElement().wordIndex;
-				result.wordEvents.lastElement().timeSpent = timeSinceLastChange;
+			if (result.getNumWordEvents() > 0) {
+				e.wordIndexDelta = wordIndex - result.getLastWordEvent().wordIndex;
+				result.getLastWordEvent().timeSpent = timeSinceLastChange;
 			}
 			e.word = word;
 			e.pxWidth = pxWidth;
 			e.time = eventTime;
 			e.tDelta = timeSinceLastChange;
 			e.relativePosition = relativePosition;
-			result.wordEvents.add(e);
+			result.addWordEvent(e);
 		}
 	};
 
@@ -70,22 +70,22 @@ public class SentenceFragment extends Fragment {
 			// Filter out spurious changes from events outside of the sentence.
 			// Only want one of these each time we move outside of the sentence,
 			// starting or moving to.
-			if (charIndex == -1 && result.charEvents.size() > 0 && result.charEvents.lastElement().charIndex == -1) {
+			if (charIndex == -1 && result.getNumCharEvents() > 0 && result.getLastCharEvent().charIndex == -1) {
 				return;
 			}
 
 			// Build an event and log it.
 			CharEvent e = new CharEvent();
 			e.charIndex = charIndex;
-			if (result.charEvents.size() > 0) {
-				e.charIndexDelta = charIndex - result.charEvents.lastElement().charIndex;
-				result.charEvents.lastElement().timeSpent = timeSinceLastChange;
+			if (result.getNumCharEvents() > 0) {
+				e.charIndexDelta = charIndex - result.getLastCharEvent().charIndex;
+				result.getLastCharEvent().timeSpent = timeSinceLastChange;
 			}
 			e.character = character;
 			e.time = eventTime;
 			e.tDelta = timeSinceLastChange;
 			e.relativePosition = relativePosition;
-			result.charEvents.add(e);
+			result.addCharEvent(e);
 		}
 	};
 
@@ -98,8 +98,8 @@ public class SentenceFragment extends Fragment {
 			// Build an event and log it.
 			SeekEvent e = new SeekEvent();
 			e.time = System.currentTimeMillis();
-			if (result.seekEvents.size() > 0) {
-				e.tDelta = e.time - result.seekEvents.lastElement().time;
+			if (result.getNumCharEvents() > 0) {
+				e.tDelta = e.time - result.getLastSeekEvent().time;
 			} else {
 				e.tDelta = e.time - baseSeekTime;
 			}
@@ -118,13 +118,13 @@ public class SentenceFragment extends Fragment {
 			e.character = sentenceView.getChar();
 			e.wordIndex = sentenceView.getWordIndex();
 			e.charIndex = sentenceView.getCharIndex();
-			if (result.seekEvents.size() > 0) {
-				e.xDelta = e.x - result.seekEvents.lastElement().x;
-				e.wordIndexDelta = e.wordIndex - result.seekEvents.lastElement().wordIndex;
-				e.charIndexDelta = e.charIndex - result.seekEvents.lastElement().charIndex;
+			if (result.getNumCharEvents() > 0) {
+				e.xDelta = e.x - result.getLastSeekEvent().x;
+				e.wordIndexDelta = e.wordIndex - result.getLastSeekEvent().wordIndex;
+				e.charIndexDelta = e.charIndex - result.getLastSeekEvent().charIndex;
 			}
 
-			result.seekEvents.add(e);
+			result.addSeekEvent(e);
 		}
 
 		@Override
@@ -136,7 +136,7 @@ public class SentenceFragment extends Fragment {
 			// If the finger is lifted when the SeekBar slider is at Max then
 			// the user is done. Save our results and go to the question or next
 			// sentence (as required).
-			if (result.seekEvents.lastElement().x == seekBarMax - seekBarMargin) {
+			if (result.getLastSeekEvent().x == seekBarMax - seekBarMargin) {
 				main.addSentenceResult(result);
 				if (!showQuestion()) {
 					nextSentence();

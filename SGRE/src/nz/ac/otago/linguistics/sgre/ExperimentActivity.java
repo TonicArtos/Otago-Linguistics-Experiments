@@ -120,7 +120,7 @@ public class ExperimentActivity extends Activity {
 	}
 	
 	public void addQuestionResult(QuestionResult result) {
-		results.lastElement().addQuestionResult(result);
+		results.lastElement().setQuestionResult(result);
 	}
 
 	/**

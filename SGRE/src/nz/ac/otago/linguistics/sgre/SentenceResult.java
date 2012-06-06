@@ -1,7 +1,7 @@
 package nz.ac.otago.linguistics.sgre;
 
 import java.io.IOException;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import android.util.JsonWriter;
 
@@ -15,9 +15,9 @@ public class SentenceResult implements JSONData {
 	public String sentence;
 	public int condition1;
 	public int condition2;
-	public Vector<SeekEvent> seekEvents = new Vector<SeekEvent>();
-	public Vector<WordEvent> wordEvents = new Vector<WordEvent>();
-	public Vector<CharEvent> charEvents = new Vector<CharEvent>();
+	private ArrayList<SeekEvent> seekEvents = new ArrayList<SeekEvent>();
+	private ArrayList<WordEvent> wordEvents = new ArrayList<WordEvent>();
+	private ArrayList<CharEvent> charEvents = new ArrayList<CharEvent>();
 	
 	private QuestionResult questionResult;
 	private static final String[] condition1Text = new String[] { "Filler", "Relative Clause", "Adverb", "Coordination", "Tutorial" };
@@ -58,7 +58,46 @@ public class SentenceResult implements JSONData {
 		out.endObject();
 	}
 
-	public void addQuestionResult(QuestionResult result) {
+	public void setQuestionResult(QuestionResult result) {
 		questionResult = result;
+	}
+	
+
+	public int getNumSeekEvents() {
+		return seekEvents.size();
+	}
+
+	public void addSeekEvent(SeekEvent e) {
+		seekEvents.add(e);
+	}
+
+	public SeekEvent getLastSeekEvent() {
+		return seekEvents.get(seekEvents.size()-1);
+	}
+	
+
+	public int getNumWordEvents() {
+		return wordEvents.size();
+	}
+
+	public void addWordEvent(WordEvent e) {
+		wordEvents.add(e);
+	}
+
+	public WordEvent getLastWordEvent() {
+		return wordEvents.get(wordEvents.size()-1);
+	}
+	
+
+	public int getNumCharEvents() {
+		return charEvents.size();
+	}
+
+	public void addCharEvent(CharEvent e) {
+		charEvents.add(e);
+	}
+
+	public CharEvent getLastCharEvent() {
+		return charEvents.get(charEvents.size()-1);
 	}
 }
